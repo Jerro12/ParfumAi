@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    
+    /* Cream beige background */
+    --background: 0.97 0.012 80;
+    --foreground: 0.25 0.02 50;
+    
+    --card: 0.99 0.008 80;
+    --card-foreground: 0.25 0.02 50;
+    
+    --popover: 0.99 0.008 80;
+    --popover-foreground: 0.25 0.02 50;
+    
+    /* Terracotta / coral primary */
+    --primary: 0.68 0.13 40;
+    --primary-foreground: 0.99 0.005 80;
+    
+    --secondary: 0.93 0.02 70;
+    --secondary-foreground: 0.3 0.03 50;
+    
+    --muted: 0.94 0.015 75;
+    --muted-foreground: 0.5 0.025 60;
+    
+    --accent: 0.9 0.04 70;
+    --accent-foreground: 0.3 0.03 50;
+    
+    --destructive: 0.6 0.22 27;
+    --destructive-foreground: 0.99 0.005 80;
+    
+    --border: 0.88 0.02 70;
+    --input: 0.92 0.018 75;
+    --ring: 0.68 0.13 40;
+    
+    /* Brand accents */
+    --gold: 0.72 0.11 75;
+    --forest: 0.32 0.04 145;
+    --forest-foreground: 0.96 0.015 80;
+    --cream: 0.97 0.012 80;
+  }
+
+  .dark {
+    --background: 0.2 0.02 50;
+    --foreground: 0.97 0.012 80;
+    
+    --card: 0.25 0.02 50;
+    --card-foreground: 0.97 0.012 80;
+    
+    --popover: 0.25 0.02 50;
+    --popover-foreground: 0.97 0.012 80;
+    
+    --primary: 0.68 0.13 40;
+    --primary-foreground: 0.99 0.005 80;
+    
+    --secondary: 0.3 0.03 50;
+    --secondary-foreground: 0.97 0.012 80;
+    
+    --muted: 0.3 0.03 50;
+    --muted-foreground: 0.7 0.02 70;
+    
+    --accent: 0.3 0.03 50;
+    --accent-foreground: 0.97 0.012 80;
+    
+    --border: 0.3 0.03 50;
+    --input: 0.3 0.03 50;
+    --ring: 0.68 0.13 40;
+  }
+
+  * {
+    border-color: oklch(var(--border));
+  }
+  body {
+    background-color: oklch(var(--background));
+    color: oklch(var(--foreground));
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -0.01em;
+  }
+}
