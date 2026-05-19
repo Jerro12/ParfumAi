@@ -22,3 +22,10 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Virtual Environments & Python Caches
+.venv/
+rasa_bot/venv39/
+rasa_bot/.rasa/
+__pycache__/
+*.pyc

@@ -1,6 +1,6 @@
 # ✧ Parfumerie AI — Wewangian Mewah dengan Kecerdasan Buatan
 
-![Parfumerie AI Banner](https://images.unsplash.com/photo-1615397349754-cfa2066a298e?q=80&w=1600&auto=format&fit=crop)
+<!-- ![Parfumerie AI Banner](https://images.unsplash.com/photo-1615397349754-cfa2066a298e?q=80&w=1600&auto=format&fit=crop) -->
 
 **Parfumerie AI** adalah platform rekomendasi parfum eksklusif dan e-commerce mewah yang memanfaatkan asisten kecerdasan buatan (*AI Scent Sommelier*) untuk membantu pelanggan menemukan identitas aroma (*signature scent*) yang paling mencerminkan kepribadian, gaya hidup, dan memori mereka.
 

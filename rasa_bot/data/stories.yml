@@ -1,0 +1,33 @@
+version: "3.1"
+
+stories:
+  - story: Alur konsultasi parfum wanita manis
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: cari_parfum
+        entities:
+          - gender: "wanita"
+          - aroma: "manis"
+      - action: action_rekomendasi_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi parfum pria tahan lama
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: cari_parfum
+        entities:
+          - gender: "pria"
+          - ketahanan: "tahan lama"
+      - action: action_rekomendasi_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur pencarian best seller
+    steps:
+      - intent: tanya_bestseller
+      - action: action_rekomendasi_parfum
+      - intent: goodbye
+      - action: utter_goodbye

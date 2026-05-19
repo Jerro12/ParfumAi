@@ -1,0 +1,61 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - cari_parfum
+  - tanya_bestseller
+  - tanya_ketahanan
+  - tanya_kopi_vanilla
+  - bot_challenge
+  - konsultasi_parfum_user_history
+
+entities:
+  - gender
+  - aroma
+  - ketahanan
+  - bestseller
+
+slots:
+  gender:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: gender
+  aroma:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: aroma
+  ketahanan:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ketahanan
+  bestseller:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: bestseller
+
+responses:
+  utter_greet:
+    - text: "Halo! Selamat datang di Parfumerie AI. Saya asisten AI Scent Sommelier Anda. Ingin mencari rekomendasi wewangian untuk wanita, pria, atau dengan keharuman khusus (seperti manis, kopi, atau segar)?"
+    - text: "Salam hangat! Saya AI Scent Sommelier Parfumerie. Ada yang bisa saya bantu untuk menemukan parfum impian Anda hari ini?"
+
+  utter_goodbye:
+    - text: "Terima kasih telah berkonsultasi dengan Parfumerie AI. Semoga keharuman khas Anda membawa kebahagiaan hari ini!"
+    - text: "Sampai jumpa! Jangan ragu kembali jika Anda butuh konsultasi aroma lainnya."
+
+  utter_iamabot:
+    - text: "Saya adalah AI Scent Sommelier, asisten virtual berbasis kecerdasan buatan yang dikembangkan menggunakan Rasa Framework untuk skripsi rekomendasi parfum."
+
+  utter_default:
+    - text: "Maaf, saya kurang memahami maksud Anda. Bisa sebutkan apakah Anda mencari parfum untuk wanita/pria atau jenis aroma tertentu seperti manis, kopi, atau segar?"
+
+actions:
+  - action_rekomendasi_parfum
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

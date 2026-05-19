@@ -1,0 +1,43 @@
+version: "3.1"
+
+rules:
+  - rule: Menyapa pengguna saat greeting
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Mengucapkan selamat tinggal
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Menjawab tantangan bot
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Menjalankan aksi rekomendasi parfum saat intent cari_parfum
+    steps:
+      - intent: cari_parfum
+      - action: action_rekomendasi_parfum
+
+  - rule: Menjalankan aksi rekomendasi parfum saat intent tanya_bestseller
+    steps:
+      - intent: tanya_bestseller
+      - action: action_rekomendasi_parfum
+
+  - rule: Menjalankan aksi rekomendasi parfum saat intent tanya_ketahanan
+    steps:
+      - intent: tanya_ketahanan
+      - action: action_rekomendasi_parfum
+
+  - rule: Menjalankan aksi rekomendasi parfum saat intent tanya_kopi_vanilla
+    steps:
+      - intent: tanya_kopi_vanilla
+      - action: action_rekomendasi_parfum
+
+  - rule: Menjalankan aksi rekomendasi parfum saat intent konsultasi_parfum_user_history
+    steps:
+      - intent: konsultasi_parfum_user_history
+      - action: action_rekomendasi_parfum
+

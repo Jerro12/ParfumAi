@@ -1,0 +1,87 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - halo
+      - halo bro
+      - hai
+      - selamat pagi
+      - selamat siang
+      - selamat malam
+      - assalamualaikum
+      - halo bot
+      - hai asisten
+      - p
+      - bro
+
+  - intent: goodbye
+    examples: |
+      - terima kasih
+      - makasih
+      - thank you
+      - sampai jumpa
+      - bye
+      - selamat tinggal
+      - oke makasih
+      - sip makasih
+
+  - intent: bot_challenge
+    examples: |
+      - kamu siapa
+      - apakah kamu robot
+      - kamu ai ya
+      - siapa yang membuatmu
+      - kamu manusia atau bot
+
+  - intent: cari_parfum
+    examples: |
+      - carikan parfum [wanita](gender) yang aromanya [manis](aroma)
+      - parfum [cewek](gender) [best seller](bestseller)
+      - rekomen parfum [pria](gender) [tahan lama](ketahanan)
+      - parfum [cowok](gender) yang wanginya [kopi](aroma)
+      - cari wewangian untuk [perempuan](gender) dengan wangi [floral](aroma)
+      - parfum [laki-laki](gender) [best seller](bestseller)
+      - ada parfum wangi [vanilla](aroma) untuk [cewek](gender)?
+      - rekomendasi parfum [segar](aroma) untuk [pria](gender)
+      - parfum [nagita slavina](aroma) wanginya apa
+      - parfum [baccarat](aroma) tahan berapa lama
+      - cari parfum [black opium](aroma)
+
+  - intent: tanya_bestseller
+    examples: |
+      - apa saja parfum best seller disini
+      - parfum paling laris apa
+      - rekomendasi parfum terlaris
+      - parfum favorit pelanggan apa
+      - parfum best seller untuk wanita apa saja
+      - parfum best seller pria
+
+  - intent: tanya_ketahanan
+    examples: |
+      - parfum yang tahan 12 jam
+      - parfum paling tahan lama
+      - rekomendasi parfum tahan 8 jam
+      - ketahanan parfum baccarat berapa lama
+      - parfum awet seharian
+
+  - intent: tanya_kopi_vanilla
+    examples: |
+      - parfum wangi kopi dan vanilla
+      - parfum aroma kue manis
+      - parfum aroma kopi hitam
+      - parfum wangi es krim vanilla
+
+  - intent: konsultasi_parfum_user_history
+    examples: |
+      - Saya cari parfum yang aromanya tahan lama
+      - Parfum untuk acara formal yang elegan
+      - Rekomendasi parfum bunga lembut dong
+      - Parfum pria yang segar dan maskulin
+      - wangi lama
+      - selamat malam
+      - saya mau cari parfum wanita
+      - halo
+      - apakah kamu rekomendasi untuk parfum wanita yang tahan lama
+      - untuk outdoor parfum wanita
+
