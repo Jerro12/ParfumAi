@@ -7,7 +7,7 @@ import { ShieldCheck, Truck, CreditCard, QrCode, Building2, Store, Check, Sparkl
 export default function Checkout({ cartItems = [], totalAmount = 0, totalFormatted = 'Rp 0', defaultName = '', defaultEmail = '' }) {
     const [deliveryType, setDeliveryType] = useState('Kirim ke Alamat (Kurir / Ekspedisi)');
     const [selectedCourier, setSelectedCourier] = useState('Parfumerie VIP Express (1 Hari Sampai)');
-    const [selectedPayment, setSelectedPayment] = useState('QRIS Instan (Gopay, OVO, Dana, ShopeePay)');
+    const [selectedPayment, setSelectedPayment] = useState('WhatsApp Payment Link (Bayar Langsung via Chat WhatsApp Admin)');
     const [isLoading, setIsLoading] = useState(false);
 
     const [form, setForm] = useState({
@@ -18,7 +18,7 @@ export default function Checkout({ cartItems = [], totalAmount = 0, totalFormatt
         notes: '',
     });
 
-    const courierCost = deliveryType.includes('Ambil') ? 0 : 25000;
+    const courierCost = 0; // Bebas ongkir
     const subtotal = Number(totalAmount);
     const finalTotal = subtotal + courierCost;
 
@@ -51,7 +51,7 @@ export default function Checkout({ cartItems = [], totalAmount = 0, totalFormatt
                         <ShieldCheck className="text-primary" size={36} /> Formulir Penyelesaian Transaksi
                     </h1>
                     <p className="text-xs text-muted-foreground mt-1 font-sans">
-                        Lengkapi informasi penerima dan pilih metode pembayaran terenkripsi untuk mencatat faktur pemesanan Anda.
+                        Lengkapi informasi penerima untuk mencatat faktur pemesanan Anda dan hubungkan langsung ke WhatsApp.
                     </p>
                 </div>
 
@@ -60,65 +60,11 @@ export default function Checkout({ cartItems = [], totalAmount = 0, totalFormatt
                     {/* Checkout Form */}
                     <form onSubmit={handleSubmit} className="lg:col-span-2 space-y-8 font-sans">
                         
-                        {/* Pilihan Metode Pengambilan/Pengiriman */}
-                        <div className="bg-card border border-border rounded-3xl p-8 shadow-xl space-y-6 font-sans">
-                            <div className="flex items-center gap-3 border-b border-border/80 pb-4 font-sans">
-                                <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm font-mono">1</div>
-                                <h2 className="font-serif text-2xl font-bold">Pilihan Pengiriman / Pengambilan</h2>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans">
-                                <label className={`flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition shadow-sm font-sans ${
-                                    deliveryType.includes('Kirim')
-                                        ? 'border-primary bg-primary/5 text-foreground shadow-primary/10'
-                                        : 'border-border bg-background text-muted-foreground hover:border-border/80 hover:text-foreground'
-                                }`}>
-                                    <input
-                                        type="radio"
-                                        name="delivery_type"
-                                        checked={deliveryType.includes('Kirim')}
-                                        onChange={() => setDeliveryType('Kirim ke Alamat (Kurir / Ekspedisi)')}
-                                        className="mt-1 text-primary focus:ring-primary accent-primary"
-                                    />
-                                    <div className="space-y-1 font-sans">
-                                        <div className="font-bold text-sm text-foreground flex items-center gap-2">
-                                            <Truck size={16} className="text-primary" /> Kirim via Kurir / Ekspedisi
-                                        </div>
-                                        <p className="text-xs text-muted-foreground leading-relaxed font-sans">
-                                            Pesanan dikemas rapi dan dikirim langsung ke alamat rumah atau kantor Anda.
-                                        </p>
-                                    </div>
-                                </label>
-
-                                <label className={`flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition shadow-sm font-sans ${
-                                    deliveryType.includes('Ambil')
-                                        ? 'border-emerald-500 bg-emerald-500/5 text-foreground shadow-emerald-500/10'
-                                        : 'border-border bg-background text-muted-foreground hover:border-border/80 hover:text-foreground'
-                                }`}>
-                                    <input
-                                        type="radio"
-                                        name="delivery_type"
-                                        checked={deliveryType.includes('Ambil')}
-                                        onChange={() => setDeliveryType('Ambil Langsung di Toko (In-Store Pickup / Cashier)')}
-                                        className="mt-1 text-emerald-500 focus:ring-emerald-500 accent-emerald-500"
-                                    />
-                                    <div className="space-y-1 font-sans">
-                                        <div className="font-bold text-sm text-foreground flex items-center gap-2">
-                                            <Store size={16} className="text-emerald-500" /> Ambil di Butik Fisik (*In-Store*)
-                                        </div>
-                                        <p className="text-xs text-muted-foreground leading-relaxed font-sans">
-                                            Tanpa ongkos kirim. Pelanggan mengambil pesanan langsung di meja kasir toko kami.
-                                        </p>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-
                         {/* Informasi Pemesan & Alamat */}
                         <div className="bg-card border border-border rounded-3xl p-8 shadow-xl space-y-6 font-sans">
                             <div className="flex items-center gap-3 border-b border-border/80 pb-4 font-sans">
-                                <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm font-mono">2</div>
-                                <h2 className="font-serif text-2xl font-bold">Informasi Pemesan & Alamat</h2>
+                                <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm font-mono">✦</div>
+                                <h2 className="font-serif text-2xl font-bold">Informasi Penerima & Alamat Pengiriman</h2>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-sans">
@@ -147,14 +93,14 @@ export default function Checkout({ cartItems = [], totalAmount = 0, totalFormatt
                                 </div>
 
                                 <div>
-                                    <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">No. WhatsApp / Telepon Aktif</label>
+                                    <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">No. WhatsApp / Telepon Aktif (Penting)</label>
                                     <input
                                         type="tel"
                                         value={form.customer_phone}
                                         onChange={(e) => setForm({ ...form, customer_phone: e.target.value })}
                                         required
-                                        className="mt-1.5 w-full bg-input/80 text-foreground border border-border rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/50 font-mono"
-                                        placeholder="08123456789"
+                                        className="mt-1.5 w-full bg-input/80 border border-border rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/50 font-mono font-bold text-primary"
+                                        placeholder="Contoh: 08123456789"
                                     />
                                 </div>
 
@@ -169,68 +115,29 @@ export default function Checkout({ cartItems = [], totalAmount = 0, totalFormatt
                                     />
                                 </div>
 
-                                {!deliveryType.includes('Ambil') && (
-                                    <div className="sm:col-span-2 font-sans">
-                                        <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">
-                                            Alamat Lengkap Pengiriman (Jalan, RT/RW, Kecamatan, Kota, Kode Pos)
-                                        </label>
-                                        <textarea
-                                            rows="3"
-                                            value={form.shipping_address}
-                                            onChange={(e) => setForm({ ...form, shipping_address: e.target.value })}
-                                            required={!deliveryType.includes('Ambil')}
-                                            className="mt-1.5 w-full bg-input/80 text-foreground border border-border rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/50 leading-relaxed font-sans"
-                                            placeholder="Jl. Merdeka No. 45, Kebayoran Baru, Jakarta Selatan, 12110"
-                                        />
-                                    </div>
-                                )}
+                                <div className="sm:col-span-2 font-sans">
+                                    <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-sans">
+                                        Alamat Lengkap Pengiriman (RT/RW, Kecamatan, Kota, Kode Pos)
+                                    </label>
+                                    <textarea
+                                        rows="3"
+                                        value={form.shipping_address}
+                                        onChange={(e) => setForm({ ...form, shipping_address: e.target.value })}
+                                        required
+                                        className="mt-1.5 w-full bg-input/80 text-foreground border border-border rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/50 leading-relaxed font-sans"
+                                        placeholder="Jl. Merdeka No. 45, Kebayoran Baru, Jakarta Selatan, 12110"
+                                    />
+                                </div>
                             </div>
                         </div>
 
-                        {/* Metode Pembayaran */}
-                        <div className="bg-card border border-border rounded-3xl p-8 shadow-xl space-y-6 font-sans">
-                            <div className="flex items-center gap-3 border-b border-border/80 pb-4 font-sans">
-                                <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm font-mono">3</div>
-                                <h2 className="font-serif text-2xl font-bold">Metode Pembayaran</h2>
-                            </div>
-
-                            <div className="space-y-4 font-sans">
-                                {[
-                                    { title: 'QRIS Instan (Gopay, OVO, Dana, ShopeePay)', icon: QrCode, desc: 'Scan barcode QRIS dengan aplikasi e-wallet atau mobile banking apa saja.' },
-                                    { title: 'Transfer Bank (BCA, Mandiri, BNI, BRI)', icon: Building2, desc: 'Transfer bank otomatis terverifikasi tanpa perlu kirim bukti bayar.' },
-                                    { title: 'Bayar Langsung di Kasir (Tunai / QRIS Store)', icon: Store, desc: 'Khusus untuk metode Ambil Langsung di Butik Fisik.' },
-                                ].map((pay) => (
-                                    <label key={pay.title} className={`flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition shadow-sm font-sans ${
-                                        selectedPayment === pay.title
-                                            ? 'border-primary bg-primary/5 text-foreground shadow-primary/10'
-                                            : 'border-border bg-background text-muted-foreground hover:border-border/80 hover:text-foreground'
-                                    }`}>
-                                        <input
-                                            type="radio"
-                                            name="payment"
-                                            checked={selectedPayment === pay.title}
-                                            onChange={() => setSelectedPayment(pay.title)}
-                                            className="mt-1 text-primary focus:ring-primary accent-primary"
-                                        />
-                                        <div className="space-y-1 font-sans">
-                                            <div className="font-bold text-sm text-foreground flex items-center gap-2 font-sans">
-                                                <pay.icon size={16} className="text-primary" /> {pay.title}
-                                            </div>
-                                            <p className="text-xs text-muted-foreground leading-relaxed font-sans">{pay.desc}</p>
-                                        </div>
-                                    </label>
-                                ))}
-                            </div>
-
-                            {selectedPayment.includes('QRIS Instan') && (
-                                <div className="p-6 bg-background rounded-2xl border border-border text-center space-y-3 font-sans">
-                                    <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest font-sans">Simulasi Barcode QRIS Pembayaran</span>
-                                    <div className="size-48 mx-auto bg-card border border-border rounded-2xl p-4 flex items-center justify-center shadow-inner font-sans">
-                                        <QrCode size={160} className="text-foreground" />
-                                    </div>
-                                    <p className="text-[11px] text-muted-foreground font-sans">Buka aplikasi e-wallet atau mobile banking Anda dan arahkan kamera ke kode di atas saat konfirmasi pesanan.</p>
-                                </div>
-                            )}
+                        <div className="p-6 bg-card border border-border rounded-3xl text-left space-y-3 font-sans shadow-xl">
+                            <span className="text-xs font-bold text-gold uppercase tracking-widest font-sans flex items-center gap-1.5">
+                                <Sparkles size={14} /> Keamanan Transaksi & Hubungkan ke WhatsApp
+                            </span>
+                            <p className="text-[11px] text-muted-foreground leading-relaxed font-sans">
+                                Setelah menekan tombol <strong>"Konfirmasi & Kirim Pesanan ke WhatsApp"</strong> di bawah, data pesanan Anda akan segera disimpan ke sistem dan Anda akan dialihkan secara otomatis ke chat WhatsApp admin butik dengan pesan rincian pesanan yang sudah terisi lengkap.
+                            </p>
                         </div>
 
                         <button
@@ -244,7 +151,7 @@ export default function Checkout({ cartItems = [], totalAmount = 0, totalFormatt
                                 </>
                             ) : (
                                 <>
-                                    <ShieldCheck size={18} /> Konfirmasi Pesanan & Bayar (Rp {finalTotal.toLocaleString('id-ID')})
+                                    <ShieldCheck size={18} /> Konfirmasi & Kirim Pesanan ke WhatsApp (Rp {finalTotal.toLocaleString('id-ID')})
                                 </>
                             )}
                         </button>

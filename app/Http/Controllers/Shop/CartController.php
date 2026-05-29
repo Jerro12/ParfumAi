@@ -183,6 +183,31 @@ class CartController extends Controller
 
         CartItem::where('user_id', $user->id)->delete();
 
+        if (str_contains($validated['payment_method'], 'WhatsApp')) {
+            $adminPhone = "6281952823254";
+            
+            $itemsText = "";
+            foreach ($cartItems as $item) {
+                $itemsText .= "- " . $item->quantity . "x *" . ($item->product ? $item->product->name : 'Parfum') . "* (" . $item->bottle_size . ") - Rp " . number_format($item->unit_price * $item->quantity, 0, ',', '.') . "\n";
+            }
+            
+            $shippingCost = 0;
+            $finalTotal = $totalAmount;
+            
+            $message = "Halo Admin Parfumerie AI, saya ingin melakukan pembayaran untuk pesanan saya:\n\n" .
+                "🧾 *Nomor Invois:* " . $invoiceNumber . "\n" .
+                "👤 *Pelanggan:* " . $validated['customer_name'] . "\n" .
+                "📞 *No. WhatsApp:* " . $validated['customer_phone'] . "\n" .
+                "🚚 *Metode Pengiriman:* " . ($validated['delivery_type'] === 'Ambil Langsung di Toko (In-Store Pickup / Cashier)' ? 'Ambil Langsung di Butik Fisik' : 'Kirim via Kurir Ekspedisi') . "\n" .
+                "💰 *Total Tagihan:* Rp " . number_format($finalTotal, 0, ',', '.') . "\n\n" .
+                "*Rincian Parfum:*\n" . $itemsText . "\n" .
+                "Mohon informasi rekening pembayaran selanjutnya. Terima kasih!";
+                
+            $waUrl = "https://api.whatsapp.com/send?phone=" . $adminPhone . "&text=" . urlencode($message);
+            
+            return Inertia::location($waUrl);
+        }
+
         return redirect()->route('riwayat')->with('success', 'Transaksi berhasil! Faktur #'.$invoiceNumber.' telah dicatat. Silakan tunjukkan tiket digital ini kepada kasir saat mengambil di butik.');
     }
 }

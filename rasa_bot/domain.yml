@@ -9,6 +9,16 @@ intents:
   - tanya_kopi_vanilla
   - bot_challenge
   - konsultasi_parfum_user_history
+  - tanya_edp_edt
+  - tanya_tips_tahan_lama
+  - tanya_cara_simpan
+  - tanya_tentang_notes
+  - tanya_pilih_parfum
+  - tanya_harga
+  - tanya_produk_spesifik
+  - tanya_parfum_acara
+  - tanya_parfum_floral
+  - tanya_parfum_fresh_segar
 
 entities:
   - gender
@@ -40,18 +50,48 @@ slots:
 
 responses:
   utter_greet:
-    - text: "Halo! Selamat datang di Parfumerie AI. Saya asisten AI Scent Sommelier Anda. Ingin mencari rekomendasi wewangian untuk wanita, pria, atau dengan keharuman khusus (seperti manis, kopi, atau segar)?"
-    - text: "Salam hangat! Saya AI Scent Sommelier Parfumerie. Ada yang bisa saya bantu untuk menemukan parfum impian Anda hari ini?"
+    - text: "Halo! Selamat datang di Parfumerie AI 🌸 Saya asisten AI Scent Sommelier Anda. Ingin mencari rekomendasi wewangian untuk wanita, pria, atau dengan keharuman khusus (manis, kopi, segar, floral)?"
+    - text: "Salam hangat! 👋 Saya AI Scent Sommelier Parfumerie. Ada yang bisa saya bantu untuk menemukan parfum impian Anda hari ini? Ceritakan kesukaan aroma atau kebutuhan Anda!"
 
   utter_goodbye:
-    - text: "Terima kasih telah berkonsultasi dengan Parfumerie AI. Semoga keharuman khas Anda membawa kebahagiaan hari ini!"
-    - text: "Sampai jumpa! Jangan ragu kembali jika Anda butuh konsultasi aroma lainnya."
+    - text: "Terima kasih telah berkonsultasi dengan Parfumerie AI 🌸 Semoga keharuman khas Anda membawa kebahagiaan hari ini!"
+    - text: "Sampai jumpa! ✨ Jangan ragu kembali jika Anda butuh konsultasi aroma lainnya. Selamat berbelanja di Parfumerie AI!"
 
   utter_iamabot:
-    - text: "Saya adalah AI Scent Sommelier, asisten virtual berbasis kecerdasan buatan yang dikembangkan menggunakan Rasa Framework untuk skripsi rekomendasi parfum."
+    - text: "Saya adalah **AI Scent Sommelier**, asisten virtual berbasis kecerdasan buatan yang dikembangkan menggunakan Rasa Framework untuk skripsi rekomendasi parfum ParfumAi 🤖✨ Saya dapat membantu Anda menemukan parfum yang sempurna dari 36 koleksi eksklusif kami!"
 
   utter_default:
-    - text: "Maaf, saya kurang memahami maksud Anda. Bisa sebutkan apakah Anda mencari parfum untuk wanita/pria atau jenis aroma tertentu seperti manis, kopi, atau segar?"
+    - text: "Maaf, saya kurang memahami maksud Anda 🙏 Bisa sebutkan apakah Anda mencari parfum untuk wanita/pria, atau jenis aroma tertentu seperti manis, kopi, segar, atau floral? Saya siap membantu!"
+
+  utter_tanya_edp_edt:
+    - text: "🌸 **[AI Sommelier - Edukasi Wewangian] Perbedaan Konsentrasi Parfum**\n\nBerikut adalah panduan perbedaan jenis wewangian berdasarkan konsentrasi minyak wewangiannya:\n\n1. **Extrait de Parfum** (Konsentrasi: 20% - 40%)\n   • Ketahanan: **8 - 12 Jam+**\n   • Karakter: Sangat pekat, mewah, dan tahan paling lama. Cocok untuk acara formal.\n2. **Eau de Parfum (EDP)** (Konsentrasi: 15% - 20%)\n   • Ketahanan: **6 - 8 Jam**\n   • Karakter: Memiliki aroma yang kuat dan elegan. Sangat ideal untuk penggunaan sehari-hari maupun acara khusus.\n3. **Eau de Toilette (EDT)** (Konsentrasi: 5% - 15%)\n   • Ketahanan: **3 - 5 Jam**\n   • Karakter: Terasa segar dan lebih ringan. Sangat pas untuk aktivitas luar ruangan atau setelah berolahraga.\n4. **Eau de Cologne (EDC)** (Konsentrasi: 2% - 4%)\n   • Ketahanan: **1 - 2 Jam**\n   • Karakter: Sangat ringan dan menyegarkan. Sering digunakan untuk penyegaran instan.\n\n💡 *Tips Sommelier*: Pilih **EDP** atau **Extrait de Parfum** (seperti koleksi *Baccarat Dubai* atau *Sauvage Louis* kami) jika Anda memprioritaskan ketahanan aroma sepanjang hari!"
+
+  utter_tanya_tips_tahan_lama:
+    - text: "✨ **[AI Sommelier - Edukasi Wewangian] 5 Tips Emas Agar Parfum Tahan Seharian**\n\nIngin aroma parfum Anda bertahan lebih lama dari biasanya? Ikuti kiat ahli berikut:\n\n1. 🧴 **Gunakan Pelembap Terlebih Dahulu**\n   Semprotkan parfum setelah mandi saat kulit bersih dan terhidrasi. Kulit kering menyerap parfum lebih cepat, sedangkan kulit lembap mengunci molekul aroma.\n2. 🎯 **Semprotkan pada Titik Nadi (Pulse Points)**\n   Fokuskan semprotan pada area hangat tubuh: pergelangan tangan, leher, belakang telinga, dan lipatan siku.\n3. 🚫 **Jangan Menggosok Pergelangan Tangan**\n   Menggosok kulit setelah menyemprotkan parfum dapat merusak molekul top notes dan mempercepat penguapan aroma.\n4. 👕 **Semprotkan Tipis pada Pakaian**\n   Serat pakaian dapat menahan aroma lebih lama dibandingkan kulit, namun pastikan bahan pakaian tidak mudah bernoda.\n5. 💦 **Jarak Penyemprotan yang Pas**\n   Semprotkan parfum dengan jarak sekitar 15-20 cm dari kulit agar penyebaran aromanya merata.\n\n🌟 *Rekomendasi Sommelier*: Untuk hasil maksimal, coba koleksi **Baccarat Dubai** (8-12 jam) atau **Sauvage Louis** (8-12 jam) yang daya tahannya luar biasa!"
+
+  utter_tanya_cara_simpan:
+    - text: "🌲 **[AI Sommelier - Edukasi Wewangian] Cara Tepat Menyimpan Parfum Agar Tidak Rusak**\n\nParfum adalah karya seni cair yang sensitif terhadap lingkungan. Berikut cara menyimpannya:\n\n1. ☀️ **Hindari Sinar Matahari Langsung**\n   Paparan sinar UV dapat memecah ikatan kimia dalam parfum, merusak aroma asli, dan mengubah warnanya.\n2. 🌡️ **Jaga Suhu Tetap Stabil & Sejuk**\n   Simpan parfum pada suhu ruangan yang sejuk dan kering (sekitar 15°C - 22°C). Hindari laci mobil.\n3. 💧 **Jangan Simpan di Kamar Mandi**\n   Kelembapan tinggi dan uap panas di kamar mandi dapat mempercepat pembusukan kandungan minyak wewangian.\n4. 🔒 **Selalu Tutup Rapat Botol**\n   Oksigen adalah musuh parfum (oksidasi). Pastikan tutup botol selalu rapat setelah digunakan.\n5. 📦 **Simpan dalam Kotak Asli atau Lemari Tertutup**\n   Kotak kemasan asli adalah pelindung terbaik dari cahaya dan debu.\n\n💡 *Tanda Parfum Rusak*: Cairan berubah warna menjadi pekat kekuningan/keruh, dan muncul aroma asam seperti cuka di semprotan pertama."
+
+  utter_tanya_tentang_notes:
+    - text: "📐 **[AI Sommelier - Edukasi Wewangian] Mengenal Piramida Aroma (Scent Notes)**\n\nMengapa wangi parfum bisa berubah setelah beberapa jam? Ini disebabkan oleh struktur **Piramida Olfaktori**:\n\n1. 🍋 **Top Notes (Aroma Pembuka)** — Durasi: **5 - 15 Menit pertama**\n   • Aroma pertama yang tercium saat disemprotkan. Biasanya berkarakter segar, ringan, seperti jeruk (citrus), buah-buahan ringan, atau herbal.\n   • Contoh: Bergamot, Lemon, Jeruk, Apple.\n2. 🌸 **Middle/Heart Notes (Inti Parfum)** — Durasi: **20 Menit - 2 Jam berikutnya**\n   • Jiwa atau kepribadian utama dari parfum. Mulai muncul setelah top notes menguap.\n   • Contoh: Rose, Jasmine, Ylang-ylang, Lavender, Kayu Manis.\n3. 🪵 **Base Notes (Aroma Dasar/Penutup)** — Durasi: **4 - 8 Jam+**\n   • Aroma dasar yang menopang seluruh parfum dan paling tahan lama.\n   • Contoh: Sandalwood, Musk, Vanilla, Amber, Oakmoss.\n\n🌟 *Tips*: Saat mencoba parfum baru, tunggu minimal 30 menit untuk mencium 'karakter asli' parfum yang muncul di fase middle & base notes!"
+
+  utter_tanya_pilih_parfum:
+    - text: "🎯 **[AI Sommelier - Edukasi Wewangian] Panduan Cara Memilih Parfum yang Tepat**\n\nMenemukan signature scent (identitas aroma) Anda sangatlah mudah:\n\n1. 📅 **Sesuaikan dengan Acara / Waktu**\n   • *Siang Hari / Kasual*: Pilih wewangian segar, ringan, seperti *Citrus*, *Aquatic*, atau *Fruity* (contoh: *Zara Wonder Rose* atau *Blue Channel*).\n   • *Malam Hari / Formal*: Pilih wewangian hangat, manis, mewah, seperti *Woody*, *Amber*, atau *Vanilla* (contoh: *Black Opium* atau *Baccarat Dubai*).\n2. 🌡️ **Perhatikan Cuaca & Suhu**\n   • *Cuaca Panas*: Gunakan aroma segar/floral yang tidak terlalu manis.\n   • *Cuaca Dingin/Hujan*: Gunakan aroma manis, rempah, atau woody hangat yang memikat.\n3. 🧬 **Kenali Tipe Kulit Anda**\n   • *Kulit Berminyak*: Aroma parfum bertahan lebih lama, bisa memilih aroma yang lebih ringan.\n   • *Kulit Kering*: Aroma lebih cepat menguap, sangat disarankan memilih **EDP/Extrait** dan menyemprotkan setelah memakai pelembab.\n4. 🧪 **Tips Test Parfum**\n   • Semprotkan di pergelangan tangan dan tunggu 30 menit sebelum memutuskan.\n   • Jangan mencium lebih dari 3 parfum sekaligus agar hidung tidak jenuh."
+
+  utter_tanya_harga:
+    - text: "💰 **[AI Sommelier] Daftar Harga Resmi Parfumerie AI**\n\nHarga kami sangat sederhana — **berlaku sama untuk SEMUA merek parfum**, hanya ditentukan oleh **ukuran botol** yang dipilih:\n\n| Ukuran Botol | Harga |\n|---|---|\n| 🔹 **10 ml** (Mini / Travel Size) | **Rp 8.000** |\n| 🔸 **20 ml** (Small Size) | **Rp 13.000** |\n| 💛 **35 ml** (Standard Size) | **Rp 25.000** |\n| 🥇 **100 ml** (Full Size) | **Rp 50.000** |\n\n✨ Jadi apapun parfumnya — *Baccarat Dubai*, *Black Opium*, *Selena Gomez*, *Vanilla Cake*, semua mengikuti daftar harga di atas!\n\n🛒 Kunjungi menu **Katalog** untuk melihat semua 36 varian dan langsung memesan."
+
+  utter_tanya_produk_spesifik:
+    - text: "🔍 **[AI Sommelier] Informasi Detail Produk Parfumerie AI**\n\nKami memiliki **36 varian parfum eksklusif** dengan berbagai pilihan aroma. Berikut adalah beberapa produk unggulan kami:\n\n🥇 **Best Seller Pria:**\n• **Baccarat Dubai** — Luxury Manis | Ketahanan: 8-12 Jam ⭐ Top Seller!\n• **Black Opium** — Kopi Manis | Ketahanan: 7-10 Jam ⭐\n• **Scandalouis** — Woody Elegan | Ketahanan: 4-7 Jam ⭐\n• **DunhillBlue** — Woody Musky | Ketahanan: 4-7 Jam ⭐\n\n🌸 **Best Seller Wanita:**\n• **Nagita Slavina** — Manis Soft | Ketahanan: 4-6 Jam ⭐\n• **Selena Gomez** — Fruity Manis | Ketahanan: 4-6 Jam ⭐\n• **White Rose** — Flower | Ketahanan: 4-6 Jam ⭐\n• **Vanilla Ice** — Vanilla Creamy | Ketahanan: 5-7 Jam ⭐\n• **Vanilla Cake** — Sweet Vanilla | Ketahanan: 6-8 Jam ⭐\n\nSebutkan nama parfum spesifik yang ingin Anda ketahui lebih lanjut!"
+
+  utter_tanya_parfum_acara:
+    - text: "🎉 **[AI Sommelier] Panduan Parfum Sesuai Acara**\n\nPilih wewangian yang sempurna untuk setiap momen:\n\n1. 🏢 **Kantor / Kerja Formal**\n   → Pilih yang clean, elegan, tidak terlalu kuat: *Chanel 05*, *212 Men*, *Kenzo*\n2. 💃 **Pesta / Malam / Kencan**\n   → Pilih yang mewah, warm, seduktif: *Baccarat Dubai*, *Black Opium*, *Vanilla Cake*\n3. 🎓 **Wisuda / Pernikahan (Acara Penting)**\n   → Pilih yang elegan, tahan lama: *Sauvage Louis*, *Chanel 05*, *Baccarat Dubai*\n4. 🌞 **Outdoor / Olahraga**\n   → Pilih yang segar, ringan, tidak terlalu pekat: *Vanilla Sports*, *Aqua Kiss*, *Kenzo*\n5. ☕ **Sehari-hari / Kuliah / Hangout**\n   → Pilih yang fresh, flirty, fun: *Selena Gomez*, *Zara Wonder Rose*, *Agnes Monica*\n\n💡 *Prinsip Utama*: Semakin formal acaranya, pilih wewangian yang lebih complex dan tahan lama!"
+
+  utter_tanya_parfum_floral:
+    - text: "🌸 **[AI Sommelier] Koleksi Parfum Floral Parfumerie AI**\n\nParfum floral selalu menjadi pilihan klasik yang timeless dan elegan. Berikut koleksi floral terbaik kami:\n\n1. **White Rose** — Flower | Wanita | 4-6 Jam ⭐ *Best Seller!*\n   → Aroma mawar putih segar yang lembut dan feminin\n2. **Lovely Sarah** — Floral Sweet | Wanita | 4-6 Jam\n   → Perpaduan bunga segar dengan sentuhan manis yang anggun\n3. **Zara Wonder Rose** — Fruity Fresh | Wanita | 5-7 Jam\n   → Bunga dengan aksen buah-buahan yang segar dan playful\n4. **Dearly Layfory** — Soft Floral | Wanita | 4-6 Jam\n   → Floral lembut yang cocok untuk sehari-hari\n5. **Chanel 05** — Floral Powdery | Wanita | 6-10 Jam\n   → Floral klasik mewah dengan sentuhan powdery yang sophistiscated\n\n💐 *Tips Sommelier*: Parfum floral paling nikmat dipakai di pagi hingga siang hari karena aromanya yang segar sangat cocok dengan suasana terang!"
+
+  utter_tanya_parfum_fresh_segar:
+    - text: "💧 **[AI Sommelier] Koleksi Parfum Fresh & Segar Parfumerie AI**\n\nParfum segar & clean cocok untuk aktivitas harian dan cuaca panas. Berikut pilihan terbaik kami:\n\n1. **Aqua Kiss** — Fresh Aquatic | Wanita | 3-5 Jam\n   → Aroma air laut yang menyegarkan, ringan di hidung\n2. **Blue Channel** — Fresh | Wanita | 6-8 Jam\n   → Fresh clean yang elegan dengan daya tahan baik\n3. **Bvlgari Aqva** — Fresh Cold | Wanita | 5-8 Jam\n   → Aquatic cold yang sophisticated\n4. **Agnes Monica** — Fresh Sweet | Wanita | 4-6 Jam\n   → Segar dengan sentuhan manis yang menyenangkan\n5. **Vanilla Sports** — Sporty Fresh | Pria | 5-7 Jam\n   → Fresh sporty yang maskulin dan energik\n6. **Kenzo** — Fresh Calming | Pria | 4-7 Jam\n   → Fresh yang menenangkan, cocok untuk sehari-hari\n7. **Raffi Ahmad** — Fresh Woody | Pria | 5-7 Jam\n   → Fresh woody yang maskulin dan natural\n\n🌊 *Tips Sommelier*: Parfum fresh sangat ideal untuk cuaca panas Indonesia. Semprotkan ekstra 1-2 kali di siang hari untuk menyegarkan kembali!"
 
 actions:
   - action_rekomendasi_parfum

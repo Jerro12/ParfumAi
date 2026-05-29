@@ -32,14 +32,30 @@ class ProductController extends Controller
             'longevity' => 'required|string|max:50',
             'is_bestseller' => 'boolean',
             'price' => 'required|numeric|min:0',
-            'image' => 'nullable|url',
+            'image' => 'nullable|string|max:1000',
+            'image_file' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'description' => 'nullable|string',
             'ai_verdict' => 'nullable|string',
         ]);
 
+        if ($request->hasFile('image_file')) {
+            $file = $request->file('image_file');
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            
+            $destPath = public_path('images/products');
+            if (!file_exists($destPath)) {
+                mkdir($destPath, 0755, true);
+            }
+            
+            $file->move($destPath, $filename);
+            $validated['image'] = '/images/products/' . $filename;
+        }
+
         if (empty($validated['image'])) {
             $validated['image'] = 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop';
         }
+
+        unset($validated['image_file']);
 
         Product::create($validated);
 
@@ -58,10 +74,26 @@ class ProductController extends Controller
             'longevity' => 'required|string|max:50',
             'is_bestseller' => 'boolean',
             'price' => 'required|numeric|min:0',
-            'image' => 'nullable|url',
+            'image' => 'nullable|string|max:1000',
+            'image_file' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'description' => 'nullable|string',
             'ai_verdict' => 'nullable|string',
         ]);
+
+        if ($request->hasFile('image_file')) {
+            $file = $request->file('image_file');
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            
+            $destPath = public_path('images/products');
+            if (!file_exists($destPath)) {
+                mkdir($destPath, 0755, true);
+            }
+            
+            $file->move($destPath, $filename);
+            $validated['image'] = '/images/products/' . $filename;
+        }
+
+        unset($validated['image_file']);
 
         $product->update($validated);
 

@@ -41,3 +41,52 @@ rules:
       - intent: konsultasi_parfum_user_history
       - action: action_rekomendasi_parfum
 
+  - rule: Menjawab perbedaan edp edt
+    steps:
+      - intent: tanya_edp_edt
+      - action: utter_tanya_edp_edt
+
+  - rule: Menjawab tips tahan lama
+    steps:
+      - intent: tanya_tips_tahan_lama
+      - action: utter_tanya_tips_tahan_lama
+
+  - rule: Menjawab cara simpan
+    steps:
+      - intent: tanya_cara_simpan
+      - action: utter_tanya_cara_simpan
+
+  - rule: Menjawab tentang notes
+    steps:
+      - intent: tanya_tentang_notes
+      - action: utter_tanya_tentang_notes
+
+  - rule: Menjawab cara pilih parfum
+    steps:
+      - intent: tanya_pilih_parfum
+      - action: utter_tanya_pilih_parfum
+
+  - rule: Menjawab pertanyaan harga
+    steps:
+      - intent: tanya_harga
+      - action: utter_tanya_harga
+
+  - rule: Menjawab pertanyaan produk spesifik
+    steps:
+      - intent: tanya_produk_spesifik
+      - action: utter_tanya_produk_spesifik
+
+  - rule: Rekomendasi parfum berdasarkan acara
+    steps:
+      - intent: tanya_parfum_acara
+      - action: utter_tanya_parfum_acara
+
+  - rule: Rekomendasi parfum floral
+    steps:
+      - intent: tanya_parfum_floral
+      - action: utter_tanya_parfum_floral
+
+  - rule: Rekomendasi parfum fresh dan segar
+    steps:
+      - intent: tanya_parfum_fresh_segar
+      - action: utter_tanya_parfum_fresh_segar

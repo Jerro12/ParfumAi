@@ -14,6 +14,15 @@ nlu:
       - hai asisten
       - p
       - bro
+      - permisi
+      - hei
+      - oke halo
+      - pagi
+      - siang
+      - malam
+      - hi
+      - hello
+      - hallo parfumerie
 
   - intent: goodbye
     examples: |
@@ -25,6 +34,13 @@ nlu:
       - selamat tinggal
       - oke makasih
       - sip makasih
+      - thanks ya
+      - oke thanks
+      - udah cukup makasih
+      - oke itu saja
+      - cukup
+      - ditutup dulu
+      - ok terimakasih banyak
 
   - intent: bot_challenge
     examples: |
@@ -33,6 +49,11 @@ nlu:
       - kamu ai ya
       - siapa yang membuatmu
       - kamu manusia atau bot
+      - apakah kamu chatbot
+      - siapa nama kamu
+      - dibuat oleh siapa bot ini
+      - kamu aplikasi apa
+      - ini bot atau manusia
 
   - intent: cari_parfum
     examples: |
@@ -47,6 +68,20 @@ nlu:
       - parfum [nagita slavina](aroma) wanginya apa
       - parfum [baccarat](aroma) tahan berapa lama
       - cari parfum [black opium](aroma)
+      - mau cari parfum [perempuan](gender)
+      - parfum [cowok](gender) yang enakeun
+      - ada rekomendasi parfum [pria](gender) yang enak
+      - cari parfum yang wangi [woody](aroma) dong
+      - kasih rekomendasi parfum [wanita](gender) yang [fruity](aroma)
+      - parfum untuk [cewek](gender) dengan aroma [bunga](aroma)
+      - parfum [pria](gender) yang wanginya beda
+      - ada parfum [fresh](aroma) buat [cowok](gender)?
+      - carikan yang bau [manis](aroma) buat [perempuan](gender)
+      - parfum [wanita](gender) yang [awet](ketahanan) seharian
+      - cari parfum [pria](gender) yang [tahan lama](ketahanan) banget
+      - rekomen yang [awet](ketahanan) buat [cowok](gender)
+      - parfum [perempuan](gender) yang [tidak cepat hilang](ketahanan)
+      - parfum [laki](gender) yang [long lasting](ketahanan)
 
   - intent: tanya_bestseller
     examples: |
@@ -56,6 +91,15 @@ nlu:
       - parfum favorit pelanggan apa
       - parfum best seller untuk wanita apa saja
       - parfum best seller pria
+      - yang paling banyak dibeli apa
+      - parfum paling populer apa
+      - yang paling sering dipesan
+      - parfum hits disini apa aja
+      - rekomen yang lagi trending
+      - produk andalan kalian apa
+      - parfum yang paling disukai pelanggan
+      - mana yang paling top
+      - parfum unggulan toko ini apa
 
   - intent: tanya_ketahanan
     examples: |
@@ -64,6 +108,16 @@ nlu:
       - rekomendasi parfum tahan 8 jam
       - ketahanan parfum baccarat berapa lama
       - parfum awet seharian
+      - parfum yang bisa bertahan dari pagi sampai malam
+      - mana yang daya tahannya paling lama
+      - parfum tahan lebih dari 8 jam
+      - yang awet seharian ada?
+      - rekomendasi parfum untuk kerja seharian
+      - parfum buat kantor yang tahan lama
+      - yang wanginya tidak cepat hilang
+      - parfum long lasting pria
+      - parfum yang tidak perlu sering semprot ulang
+      - mana yang paling awet dari semua koleksi
 
   - intent: tanya_kopi_vanilla
     examples: |
@@ -71,6 +125,17 @@ nlu:
       - parfum aroma kue manis
       - parfum aroma kopi hitam
       - parfum wangi es krim vanilla
+      - parfum yang wanginya seperti kopi
+      - aroma cappuccino ada gak
+      - parfum wangi dessert
+      - parfum gourmand apa aja
+      - suka yang wanginya manis seperti kue
+      - parfum bau vanilla gimana
+      - cari yang wanginya coklat atau kopi
+      - parfum aroma bakery
+      - mana yang kopi banget
+      - parfum wanginya seperti minuman kopi
+      - sweet and warm fragrance ada?
 
   - intent: konsultasi_parfum_user_history
     examples: |
@@ -79,9 +144,193 @@ nlu:
       - Rekomendasi parfum bunga lembut dong
       - Parfum pria yang segar dan maskulin
       - wangi lama
-      - selamat malam
       - saya mau cari parfum wanita
-      - halo
       - apakah kamu rekomendasi untuk parfum wanita yang tahan lama
       - untuk outdoor parfum wanita
+      - saya mau pilih parfum
+      - bisa bantu cari parfum
+      - bantu saya pilih wewangian
+      - rekomendasiin parfum buat saya dong
+      - saya bingung mau pilih yang mana
+      - kasih tau parfum yang bagus
+      - saya mau beli parfum tapi bingung
 
+  - intent: tanya_edp_edt
+    examples: |
+      - apa bedanya edp dengan edt
+      - beda edp edt edc
+      - apa itu eau de parfum
+      - apa itu eau de toilette
+      - apa perbedaan konsentrasi parfum
+      - jelaskan beda edp dan edt
+      - apa itu extrait de parfum
+      - bedanya parfum biasa sama eau de parfum apa
+      - edp lebih kuat dari edt?
+      - konsentrasi parfum yang paling pekat apa
+      - apa itu cologne
+      - mana yang lebih tahan lama edp atau edt
+      - kenapa parfum ada berbagai jenisnya
+      - perbedaan eau de cologne dan eau de toilette
+      - parfum extrait itu apa
+
+  - intent: tanya_tips_tahan_lama
+    examples: |
+      - tips parfum tahan lama
+      - cara agar parfum awet seharian
+      - bagaimana cara menyemprot parfum biar tahan lama
+      - tips pemakaian parfum
+      - cara pakai parfum yang benar
+      - cara agar wangi awet
+      - kenapa parfum saya cepat hilang
+      - cara memaksimalkan ketahanan parfum
+      - tips agar wangi parfum bertahan
+      - cara biar wangi seharian
+      - parfum saya kok cepat pudar
+      - bagaimana cara memakai parfum yang tepat
+      - trik agar parfum tidak cepat habis
+      - tips penyemprotan parfum yang benar
+      - cara agar parfum menempel lebih lama di kulit
+
+  - intent: tanya_cara_simpan
+    examples: |
+      - bagaimana cara menyimpan parfum
+      - cara merawat parfum biar gak rusak
+      - simpan parfum di mana yang bagus
+      - apakah boleh simpan parfum di kamar mandi
+      - tanda parfum rusak apa
+      - cara agar parfum tidak berubah wangi
+      - parfum sebaiknya disimpan di mana
+      - boleh taruh parfum di kulkas
+      - parfum bisa kadaluarsa
+      - berapa lama parfum bisa bertahan
+      - kenapa wangi parfum berubah setelah lama disimpan
+      - cara menjaga kualitas parfum
+      - boleh tidak parfum kena cahaya matahari
+      - parfum yang sudah lama masih bagus tidak
+      - cara merawat koleksi parfum
+
+  - intent: tanya_tentang_notes
+    examples: |
+      - apa itu top notes
+      - jelaskan top notes middle notes base notes
+      - struktur aroma parfum
+      - apa itu base notes
+      - mengapa wangi parfum berubah setelah dipakai
+      - piramida olfaktori parfum
+      - kenapa wangi awal berbeda setelah beberapa menit
+      - apa itu heart notes
+      - aroma parfum itu berlapis ya
+      - kenapa parfum punya wangi yang berbeda di awal dan akhir
+      - apa yang dimaksud dengan dry down parfum
+      - aroma parfum terbaik muncul kapan
+      - mengapa top notes cepat menghilang
+      - middle notes itu apa
+      - jelaskan lapisan aroma dalam parfum
+
+  - intent: tanya_pilih_parfum
+    examples: |
+      - cara memilih parfum yang cocok
+      - bagaimana memilih signature scent
+      - parfum untuk cuaca panas apa
+      - memilih parfum sesuai jenis kulit
+      - rekomendasi parfum untuk malam hari
+      - cara beli parfum yang pas
+      - parfum yang cocok untuk saya
+      - bagaimana memilih parfum pertama kali
+      - parfum untuk kulit berminyak apa
+      - parfum untuk cuaca hujan yang cocok
+      - parfum yang pas buat saya apa
+      - bagaimana cara menemukan parfum yang sesuai kepribadian
+      - cara test parfum sebelum beli
+      - parfum apa yang pas untuk introvert
+      - parfum buat orang aktif berolahraga
+
+  - intent: tanya_harga
+    examples: |
+      - berapa harga parfum di sini
+      - harganya berapa
+      - parfum paling murah berapa
+      - ada parfum di bawah 50 ribu
+      - harga baccarat dubai berapa
+      - parfum 10ml harganya berapa
+      - harga 100ml berapa
+      - parfum 20ml harganya
+      - ada yang harga 25 ribu
+      - range harga parfumnya berapa
+      - harga paling terjangkau berapa
+      - parfum 35ml harganya berapa
+      - apakah ada paket harga
+      - harga mulai dari berapa
+      - berapa kisaran harga parfum di toko ini
+
+  - intent: tanya_produk_spesifik
+    examples: |
+      - parfum baccarat dubai seperti apa
+      - ceritakan tentang black opium
+      - apa itu sauvage louis
+      - nagita slavina wanginya seperti apa
+      - parfum vanilla ice itu kayak gimana
+      - wangi selena gomez itu bagaimana
+      - kenzo wanginya apa
+      - white rose cocok untuk siapa
+      - baccarat itu untuk pria atau wanita
+      - black opium wanginya kopi ya
+      - chanel 05 itu seperti apa
+      - dunhillblue itu aroma apa
+      - scandalouis wanginya gimana
+      - cerita dong tentang parfum ariana grande
+      - parfum victoria secret wanginya bagaimana
+
+  - intent: tanya_parfum_acara
+    examples: |
+      - parfum untuk ke kantor
+      - parfum untuk pesta
+      - parfum untuk pernikahan
+      - parfum untuk olahraga
+      - parfum yang cocok untuk kuliah
+      - parfum untuk kencan
+      - wewangian untuk acara formal
+      - parfum untuk wisuda
+      - parfum untuk hangout santai
+      - parfum buat outdoor activities
+      - parfum untuk lamaran
+      - rekomendasi parfum untuk kondangan
+      - parfum untuk gym
+      - parfum untuk nonton konser
+      - wangi yang cocok untuk sehari-hari
+
+  - intent: tanya_parfum_floral
+    examples: |
+      - parfum bunga-bungaan
+      - cari parfum wangi bunga
+      - parfum floral yang lembut
+      - parfum rose atau mawar
+      - parfum yang aromanya seperti bunga segar
+      - ada parfum wangi bunga untuk wanita
+      - parfum floral sweet itu apa aja
+      - cari yang wangi seperti taman bunga
+      - parfum soft floral itu seperti apa
+      - parfum wangi melati atau rose
+      - rekomendasi parfum floral powdery
+      - parfum bunga yang tidak menyengat
+      - wangi bunga yang elegan
+      - parfum seperti bunga musim semi
+      - parfum feminim dengan aroma bunga
+
+  - intent: tanya_parfum_fresh_segar
+    examples: |
+      - parfum yang segar
+      - parfum fresh dan ringan
+      - cari yang wanginya airy
+      - parfum aquatic atau air laut
+      - parfum yang tidak terlalu kuat
+      - wangi segar untuk pagi hari
+      - parfum citrus segar
+      - parfum yang light dan fresh
+      - parfum yang tidak bikin pusing
+      - cari yang aromanya clean dan fresh
+      - parfum segar untuk musim panas
+      - parfum untuk cuaca terik
+      - parfum yang wanginya kayak setelah mandi
+      - parfum crisp dan clean
+      - rekomendasi parfum yang fresh untuk kerja

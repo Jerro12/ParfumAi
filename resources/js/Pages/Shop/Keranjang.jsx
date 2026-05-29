@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { Trash2, Gift, ShieldCheck, ArrowRight, ArrowLeft, Tag, ShoppingBag, Package } from 'lucide-react';
 
 export default function Keranjang({ cartItems = [], totalAmount = 0, totalFormatted = 'Rp 0' }) {
-    const [luxuryPackaging, setLuxuryPackaging] = useState(false);
     const [promoCode, setPromoCode] = useState('');
     const [discount, setDiscount] = useState(0);
     const [promoApplied, setPromoApplied] = useState(false);
@@ -20,8 +19,7 @@ export default function Keranjang({ cartItems = [], totalAmount = 0, totalFormat
     };
 
     const subtotal = Number(totalAmount);
-    const packagingCost = luxuryPackaging ? 50000 : 0;
-    const finalTotal = Math.max(0, subtotal + packagingCost - discount);
+    const finalTotal = Math.max(0, subtotal - discount);
 
     const applyPromo = (e) => {
         e.preventDefault();
@@ -131,31 +129,7 @@ export default function Keranjang({ cartItems = [], totalAmount = 0, totalFormat
                         {/* Order Summary & Gift Box Configurator */}
                         <div className="space-y-6 font-sans">
                             
-                            {/* Luxury Packaging Option */}
-                            <div className={`p-6 rounded-3xl border transition duration-300 flex items-start gap-4 cursor-pointer shadow-md ${
-                                luxuryPackaging 
-                                    ? 'bg-gold/10 border-gold/40 text-gold' 
-                                    : 'bg-card border-border text-foreground hover:border-border/80'
-                            }`}
-                                onClick={() => setLuxuryPackaging(!luxuryPackaging)}
-                            >
-                                <div className="p-3 bg-background rounded-2xl border border-border shadow-inner shrink-0 font-sans">
-                                    <Gift size={24} className="text-gold" />
-                                </div>
-                                <div className="space-y-1 flex-1 font-sans">
-                                    <div className="flex justify-between items-center font-sans">
-                                        <h4 className="font-serif font-bold text-base text-foreground">Kemasan Kayu & Pita Sutra</h4>
-                                        <span className="font-mono text-xs font-extrabold text-gold">+ Rp 50.000</span>
-                                    </div>
-                                    <p className="text-xs text-muted-foreground leading-relaxed font-sans">
-                                        Kotak kayu cendana eksotis berukir emas dengan kartu ucapan personal tertulis tangan. Cocok untuk hadiah.
-                                    </p>
-                                    <div className="pt-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-primary font-sans">
-                                        <input type="checkbox" checked={luxuryPackaging} readOnly className="rounded border-border accent-primary" />
-                                        <span>Gunakan Kemasan Eksklusif</span>
-                                    </div>
-                                </div>
-                            </div>
+
 
                             {/* Order Summary Box */}
                             <div className="bg-card border border-border rounded-3xl p-8 shadow-xl space-y-6 font-sans">
@@ -188,12 +162,7 @@ export default function Keranjang({ cartItems = [], totalAmount = 0, totalFormat
                                         <span className="text-muted-foreground">Subtotal Produk:</span>
                                         <span className="font-mono font-bold text-foreground">Rp {subtotal.toLocaleString('id-ID')}</span>
                                     </div>
-                                    {luxuryPackaging && (
-                                        <div className="flex justify-between font-sans">
-                                            <span className="text-muted-foreground">Kemasan Eksklusif:</span>
-                                            <span className="font-mono font-bold text-gold">+ Rp 50.000</span>
-                                        </div>
-                                    )}
+
                                     {discount > 0 && (
                                         <div className="flex justify-between text-emerald-600 font-bold font-sans">
                                             <span>Potongan Voucher:</span>

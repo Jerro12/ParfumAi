@@ -31,3 +31,67 @@ stories:
       - action: action_rekomendasi_parfum
       - intent: goodbye
       - action: utter_goodbye
+
+  - story: Alur edukasi seputar parfum
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_edp_edt
+      - action: utter_tanya_edp_edt
+      - intent: tanya_tentang_notes
+      - action: utter_tanya_tentang_notes
+      - intent: tanya_tips_tahan_lama
+      - action: utter_tanya_tips_tahan_lama
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi harga lalu cari produk
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_harga
+      - action: utter_tanya_harga
+      - intent: cari_parfum
+        entities:
+          - gender: "wanita"
+      - action: action_rekomendasi_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi pilih parfum untuk acara lalu beli
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_parfum_acara
+      - action: utter_tanya_parfum_acara
+      - intent: tanya_produk_spesifik
+      - action: utter_tanya_produk_spesifik
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi parfum floral wanita
+    steps:
+      - intent: tanya_parfum_floral
+      - action: utter_tanya_parfum_floral
+      - intent: tanya_cara_simpan
+      - action: utter_tanya_cara_simpan
+
+  - story: Alur tanya fresh segar lalu cara memilih
+    steps:
+      - intent: tanya_parfum_fresh_segar
+      - action: utter_tanya_parfum_fresh_segar
+      - intent: tanya_pilih_parfum
+      - action: utter_tanya_pilih_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi kopi vanilla pria
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_kopi_vanilla
+      - action: action_rekomendasi_parfum
+      - intent: tanya_edp_edt
+      - action: utter_tanya_edp_edt
+      - intent: goodbye
+      - action: utter_goodbye

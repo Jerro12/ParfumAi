@@ -17,6 +17,7 @@ export default function ProductsIndex({ products }) {
         is_bestseller: false,
         price: '50000',
         image: '',
+        image_file: null,
         description: '',
         ai_verdict: '',
     });
@@ -54,6 +55,7 @@ export default function ProductsIndex({ products }) {
             is_bestseller: Boolean(prod.is_bestseller),
             price: prod.price || '50000',
             image: prod.image || '',
+            image_file: null,
             description: prod.description || '',
             ai_verdict: prod.ai_verdict || '',
         });
@@ -62,8 +64,13 @@ export default function ProductsIndex({ products }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         if (editingProduct) {
-            put(route('admin.produk.update', editingProduct.id), {
+            // Menggunakan POST dengan spoofing _method: 'PUT' agar data gambar/multipart terkirim dengan benar di Laravel
+            router.post(route('admin.produk.update', editingProduct.id), {
+                ...data,
+                _method: 'PUT',
+            }, {
                 onSuccess: () => {
                     setIsModalOpen(false);
                     reset();
@@ -320,16 +327,45 @@ export default function ProductsIndex({ products }) {
                                     {errors.price && <p className="text-xs text-destructive font-medium mt-1">{errors.price}</p>}
                                 </div>
 
-                                <div>
-                                    <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">URL Gambar Unsplash</label>
-                                    <input
-                                        type="url"
-                                        value={data.image}
-                                        onChange={(e) => setData('image', e.target.value)}
-                                        placeholder="https://images.unsplash.com/..."
-                                        className="mt-1.5 w-full bg-input/60 text-foreground border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                                    />
-                                    {errors.image && <p className="text-xs text-destructive font-medium mt-1">{errors.image}</p>}
+                                <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 bg-secondary/20 border border-border rounded-2xl">
+                                    <div>
+                                        <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Unggah Foto Varian Parfum (.jpg, .png, .jpeg)</label>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            onChange={(e) => setData('image_file', e.target.files[0])}
+                                            className="mt-1.5 w-full text-xs text-muted-foreground file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-primary file:text-primary-foreground file:cursor-pointer hover:file:opacity-90 transition font-sans"
+                                        />
+                                        {errors.image_file && <p className="text-xs text-destructive font-medium mt-1 font-sans">{errors.image_file}</p>}
+                                    </div>
+                                    
+                                    <div>
+                                        <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Atau Masukkan URL Gambar Eksternal</label>
+                                        <input
+                                            type="text"
+                                            value={data.image}
+                                            onChange={(e) => setData('image', e.target.value)}
+                                            placeholder="https://images.unsplash.com/..."
+                                            className="mt-1.5 w-full bg-input/60 text-foreground border border-border rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/50 font-sans"
+                                        />
+                                        {errors.image && <p className="text-xs text-destructive font-medium mt-1 font-sans">{errors.image}</p>}
+                                    </div>
+
+                                    {(data.image_file || data.image) && (
+                                        <div className="sm:col-span-2 flex items-center gap-4 border-t border-border/40 pt-4 font-sans">
+                                            <div className="w-16 h-16 rounded-xl overflow-hidden bg-background border border-border shrink-0 shadow">
+                                                <img
+                                                    src={data.image_file ? URL.createObjectURL(data.image_file) : data.image}
+                                                    alt="Preview"
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                            <div className="font-sans">
+                                                <div className="text-xs font-bold text-foreground font-sans">Pratinjau Foto Parfum</div>
+                                                <div className="text-[10px] text-muted-foreground font-sans">Foto ini akan ditampilkan di katalog publik dan detail parfum.</div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="sm:col-span-2 flex items-center gap-3 p-4 bg-secondary/40 border border-border rounded-2xl">

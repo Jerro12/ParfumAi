@@ -14,6 +14,32 @@ export default function RiwayatTransaksi({ orders = [] }) {
         return true;
     });
 
+    const handleWhatsAppPayment = (order) => {
+        const adminPhone = "6281952823254";
+        
+        let itemsText = "";
+        order.items?.forEach((item) => {
+            itemsText += `- ${item.quantity}x *${item.product_name}* (${item.bottle_size}) - Rp ${Number(item.subtotal).toLocaleString('id-ID')}\n`;
+        });
+        
+        const deliveryText = order.delivery_type.includes('Ambil') 
+            ? 'Ambil Langsung di Butik Fisik' 
+            : 'Kirim via Kurir Ekspedisi';
+
+        const message = `Halo Admin Parfumerie AI, saya ingin melakukan pembayaran untuk pesanan saya:\n\n` +
+            `🧾 *Nomor Invois:* ${order.invoice_number}\n` +
+            `👤 *Pelanggan:* ${order.customer_name}\n` +
+            `📞 *No. WhatsApp:* ${order.customer_phone}\n` +
+            `🚚 *Metode Pengiriman:* ${deliveryText}\n` +
+            `💰 *Total Tagihan:* Rp ${Number(order.total_amount).toLocaleString('id-ID')}\n\n` +
+            `*Rincian Parfum:*\n${itemsText}\n` +
+            `Mohon informasi rekening pembayaran selanjutnya. Terima kasih!`;
+            
+        const encodedMessage = encodeURIComponent(message);
+        const waUrl = `https://api.whatsapp.com/send?phone=${adminPhone}&text=${encodedMessage}`;
+        window.open(waUrl, '_blank');
+    };
+
     const getStatusBadge = (status) => {
         switch (status) {
             case 'Siap Diambil':
@@ -131,7 +157,7 @@ export default function RiwayatTransaksi({ orders = [] }) {
                                     </div>
                                 </div>
 
-                                <div className="pt-4 border-t border-border/80 flex items-center justify-between font-sans">
+                                <div className="pt-4 border-t border-border/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-sans">
                                     <div className="font-sans">
                                         <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Total Pembayaran</span>
                                         <div className="font-mono text-xl font-extrabold text-foreground">
@@ -139,12 +165,23 @@ export default function RiwayatTransaksi({ orders = [] }) {
                                         </div>
                                     </div>
 
-                                    <button
-                                        onClick={() => setSelectedOrder(o)}
-                                        className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider hover:opacity-90 transition flex items-center gap-1.5 shadow-md shadow-primary/20 font-sans"
-                                    >
-                                        <QrCode size={16} /> Tiket & Invois
-                                    </button>
+                                    <div className="flex items-center gap-2">
+                                        {o.payment_status === 'Menunggu Pembayaran' && o.payment_method.includes('WhatsApp') && (
+                                            <button
+                                                onClick={() => handleWhatsAppPayment(o)}
+                                                className="px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5 shadow-md shadow-emerald-600/20 font-sans"
+                                                title="Bayar langsung via chat WhatsApp admin"
+                                            >
+                                                <Sparkles size={14} className="text-gold animate-pulse" /> Bayar via WA
+                                            </button>
+                                        )}
+                                        <button
+                                            onClick={() => setSelectedOrder(o)}
+                                            className="px-4 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider hover:opacity-90 transition flex items-center gap-1.5 shadow-md shadow-primary/20 font-sans"
+                                        >
+                                            <QrCode size={14} /> Tiket & Invois
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -223,21 +260,32 @@ export default function RiwayatTransaksi({ orders = [] }) {
                                 </div>
                             </div>
 
-                            <div className="pt-4 flex items-center justify-between gap-4 font-sans">
-                                <button
-                                    onClick={() => window.print()}
-                                    className="flex-1 py-3.5 bg-secondary text-secondary-foreground border border-border rounded-full text-xs font-bold uppercase tracking-wider hover:bg-secondary/80 transition flex items-center justify-center gap-2 font-sans"
-                                >
-                                    <Printer size={16} /> Cetak Tiket / PDF
-                                </button>
-                                {selectedOrder.delivery_type.includes('Ambil') && (
-                                    <Link
-                                        href={route('tentang')}
-                                        className="flex-1 py-3.5 bg-emerald-600 text-white rounded-full text-xs font-bold uppercase tracking-wider hover:bg-emerald-500 transition flex items-center justify-center gap-2 text-center font-sans"
+                            <div className="space-y-4 pt-4 border-t border-border/80 font-sans">
+                                {selectedOrder.payment_status === 'Menunggu Pembayaran' && selectedOrder.payment_method.includes('WhatsApp') && (
+                                    <button
+                                        onClick={() => handleWhatsAppPayment(selectedOrder)}
+                                        className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 font-sans"
                                     >
-                                        <MapPin size={16} /> Lokasi Butik Fisik
-                                    </Link>
+                                        <Sparkles size={16} className="text-gold animate-pulse" /> Bayar Sekarang via WhatsApp (WhatsApp Link)
+                                    </button>
                                 )}
+
+                                <div className="flex items-center justify-between gap-4 font-sans">
+                                    <button
+                                        onClick={() => window.print()}
+                                        className="flex-1 py-3.5 bg-secondary text-secondary-foreground border border-border rounded-full text-xs font-bold uppercase tracking-wider hover:bg-secondary/80 transition flex items-center justify-center gap-2 font-sans"
+                                    >
+                                        <Printer size={16} /> Cetak Tiket / PDF
+                                    </button>
+                                    {selectedOrder.delivery_type.includes('Ambil') && (
+                                        <Link
+                                            href={route('tentang')}
+                                            className="flex-1 py-3.5 bg-emerald-600 text-white rounded-full text-xs font-bold uppercase tracking-wider hover:bg-emerald-500 transition flex items-center justify-center gap-2 text-center font-sans"
+                                        >
+                                            <MapPin size={16} /> Lokasi Butik Fisik
+                                        </Link>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
