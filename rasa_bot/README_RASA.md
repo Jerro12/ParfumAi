@@ -43,9 +43,9 @@ Aktifkan *virtual environment*:
   ```
 
 ### 2. Instalasi Dependensi Rasa
-Instal paket Rasa dan Rasa SDK:
+Instal paket Rasa, Rasa SDK, dan seluruh dependensi yang dibutuhkan melalui file requirements.txt:
 ```bash
-pip install rasa rasa-sdk
+pip install -r requirements.txt
 ```
 
 ### 3. Melatih Model NLP (*Training*)
