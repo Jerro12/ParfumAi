@@ -27,5 +27,6 @@ Thumbs.db
 .venv/
 rasa_bot/venv39/
 rasa_bot/.rasa/
+rasa_bot/models/
 __pycache__/
 *.pyc
