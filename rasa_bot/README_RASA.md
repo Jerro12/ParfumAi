@@ -30,7 +30,7 @@ Untuk menjalankan *chatbot* Rasa di komputer lokal Anda saat demonstrasi atau si
 Pastikan Python (versi 3.8 - 3.10) telah terinstal. Buka terminal baru dan masuk ke direktori `rasa_bot`:
 ```bash
 cd d:\laragon\www\ParfumAi\rasa_bot
-python -m venv venv
+python -m venv venv39
 ```
 Aktifkan *virtual environment*:
 - **Windows (Command Prompt / PowerShell)**:
