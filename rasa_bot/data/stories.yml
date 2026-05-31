@@ -95,3 +95,44 @@ stories:
       - action: utter_tanya_edp_edt
       - intent: goodbye
       - action: utter_goodbye
+
+  - story: Alur penasaran tentang parfum lalu cari produk
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_pengertian_parfum
+      - action: utter_tanya_pengertian_parfum
+      - intent: tanya_manfaat_parfum
+      - action: utter_tanya_manfaat_parfum
+      - intent: cari_parfum
+        entities:
+          - gender: "wanita"
+      - action: action_rekomendasi_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur belajar ilmu parfum lengkap
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_sejarah_parfum
+      - action: utter_tanya_sejarah_parfum
+      - intent: tanya_cara_kerja_parfum
+      - action: utter_tanya_cara_kerja_parfum
+      - intent: tanya_tentang_notes
+      - action: utter_tanya_tentang_notes
+      - intent: tanya_tips_tahan_lama
+      - action: utter_tanya_tips_tahan_lama
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur tanya cara kerja parfum lalu beli
+    steps:
+      - intent: tanya_cara_kerja_parfum
+      - action: utter_tanya_cara_kerja_parfum
+      - intent: tanya_bestseller
+      - action: action_rekomendasi_parfum
+      - intent: tanya_harga
+      - action: utter_tanya_harga
+      - intent: goodbye
+      - action: utter_goodbye

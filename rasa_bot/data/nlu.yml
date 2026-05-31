@@ -57,7 +57,7 @@ nlu:
 
   - intent: cari_parfum
     examples: |
-      - carikan parfum [wanita](gender) yang aromanya [manis](aroma)
+      - cari parfum [wanita](gender) yang aromanya [manis](aroma)
       - parfum [cewek](gender) [best seller](bestseller)
       - rekomen parfum [pria](gender) [tahan lama](ketahanan)
       - parfum [cowok](gender) yang wanginya [kopi](aroma)
@@ -82,6 +82,11 @@ nlu:
       - rekomen yang [awet](ketahanan) buat [cowok](gender)
       - parfum [perempuan](gender) yang [tidak cepat hilang](ketahanan)
       - parfum [laki](gender) yang [long lasting](ketahanan)
+      - cari parfum [unisex](gender)
+      - parfum yang cocok untuk [semua gender](gender)
+      - ada parfum [unisex](gender) yang bagus?
+      - parfum yang bisa dipakai cowok maupun cewek
+      - rekomendasi parfum [gender neutral](gender)
 
   - intent: tanya_bestseller
     examples: |
@@ -334,3 +339,75 @@ nlu:
       - parfum yang wanginya kayak setelah mandi
       - parfum crisp dan clean
       - rekomendasi parfum yang fresh untuk kerja
+
+  - intent: tanya_pengertian_parfum
+    examples: |
+      - apa itu parfum
+      - parfum itu apa sih
+      - jelaskan pengertian parfum
+      - apa definisi parfum
+      - parfum dibuat dari apa
+      - apa yang dimaksud dengan parfum
+      - parfum itu artinya apa
+      - bisa jelaskan apa itu wewangian
+      - apa pengertian wewangian atau parfum
+      - parfum secara ilmiah itu apa
+      - penjelasan tentang parfum dong
+      - parfum itu terbuat dari bahan apa
+      - definisikan parfum untuk saya
+      - apa itu fragrance
+      - parfum dan wewangian itu sama gak
+
+  - intent: tanya_manfaat_parfum
+    examples: |
+      - apa manfaat memakai parfum
+      - kenapa harus pakai parfum
+      - apa fungsi parfum
+      - manfaat wewangian untuk kesehatan
+      - parfum bermanfaat untuk apa
+      - gunanya parfum itu apa
+      - kenapa parfum penting
+      - apa dampak positif memakai parfum
+      - parfum bisa mempengaruhi mood ya
+      - manfaat psikologis dari parfum
+      - parfum bisa bikin pede gak
+      - apa kegunaan memakai parfum sehari-hari
+      - parfum bisa bikin orang lebih percaya diri
+      - pengaruh parfum terhadap psikologi
+      - manfaat aroma terapi dari parfum
+
+  - intent: tanya_cara_kerja_parfum
+    examples: |
+      - bagaimana cara kerja parfum di tubuh
+      - kenapa wangi parfum bisa beda di orang yang berbeda
+      - parfum bekerja bagaimana
+      - cara kerja wewangian di kulit
+      - kenapa parfum menyatu dengan tubuh
+      - parfum bereaksi dengan kulit bagaimana
+      - proses parfum menempel di kulit itu gimana
+      - kenapa suhu tubuh mempengaruhi wangi parfum
+      - mengapa parfum berbeda bau saat di botol dan di kulit
+      - body chemistry itu pengaruh ke parfum ya
+      - bagaimana molekul parfum menyebar di udara
+      - kenapa kulit berminyak parfumnya lebih tahan lama
+      - ilmu di balik wangi parfum itu gimana
+      - bagaimana hidung kita mencium aroma parfum
+      - parfum diproses oleh tubuh bagaimana
+
+  - intent: tanya_sejarah_parfum
+    examples: |
+      - sejarah parfum itu dari mana
+      - parfum berasal dari mana
+      - kapan parfum pertama kali ditemukan
+      - asal usul parfum
+      - sejarah perkembangan parfum
+      - parfum sudah ada sejak kapan
+      - siapa yang pertama kali membuat parfum
+      - parfum berasal dari zaman apa
+      - ceritakan sejarah wewangian
+      - parfum zaman dulu seperti apa
+      - dari mana parfum berasal
+      - parfum pertama kali dibuat di mana
+      - bagaimana sejarah industri parfum
+      - apakah parfum sudah ada sejak zaman kuno
+      - parfum di mesir kuno itu seperti apa

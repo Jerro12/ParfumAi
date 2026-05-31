@@ -1,23 +1,20 @@
 JENIS PARFUM,JENIS AROMA,JENIS KELAMIN,PENJUALAN,KETAHANAN,UKURAN,HARGA
-Victoria Secret,Manis Floral,Perempuan,,3-5 Jam,10 ml,Rp. 8.000
-Lovely Sarah,Floral Sweet,Perempuan,,4-6 Jam,20 ml,Rp. 13.000
-Nagita Slavina,Manis Soft,Perempuan,BEST SELLER,4-6 Jam,35 ml,Rp. 25.000
-Ariana Grande,Manis Creamy,Perempuan,,5-8 Jam,100 ml,Rp. 50.000
+Victoria Secret,Manis Floral,Perempuan,,3-5 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Lovely Sarah,Floral Sweet,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Nagita Slavina,Manis Soft,Perempuan,BEST SELLER,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Black Pink,Manis Creamy,Perempuan,,5-8 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Selena Gomez,Fruity Manis,Perempuan,BEST SELLER,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Zara Wonder Rose,Fruity Fresh,Perempuan,,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Bubble Gum,Manis,Perempuan,,3-5 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Secret Wish,Fruity Manis,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 White Rose,Flower,Perempuan,BEST SELLER,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Bvlgari Aqva,Fresh Cold,Perempuan,,5-8 jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Bvlgari Aqva,Fresh Cold,Unisex,,5-8 jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Princess Syahrini,Glamor,Perempuan,,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Aqua Kiss,Fresh Aquatic,Perempuan,,3-5 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Incanto Shine,Fruity Manis,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Chanel 05,Floral Powdery,Perempuan,,6-10 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Dearly Layfory,Soft Floral,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Soft,Soft Powdery,Perempuan,,3-5 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Agnes Monica,Fresh Sweet,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Mid Night Fantasy,Fresh Sweet,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Vanilla Ice,Vanilla Creamy,Perempuan,BEST SELLER,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Candy Bliss,Manis,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Candy Love,Manis,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Avril Rose,Soft,Perempuan,,4-6 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Strawberry,Fruity,Perempuan,,3-5 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Blue Channel,Fresh,Perempuan,,6-8 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
@@ -27,11 +24,11 @@ Baccarat Dubai,Luxury Manis,Laki-laki,BEST SELLER,8-12 Jam,Semua Ukuran (10ml - 
 Axe,Maskulin,Laki-laki,,3-5 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 212 Men,Fresh Spicy,Laki-laki,,5-8 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Black Opium,Kopi Manis,Laki-laki,BEST SELLER,7-10 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Vanilla Sports,Sporty Fresh,Laki-laki,,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Kenzo,Fresh Calming,Laki-laki,,4-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Raffi Ahmad,Fresh Woody,Laki-laki,,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Polo Sports,Sporty Fresh,Laki-laki,,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Baby Love,Fresh Calming,Laki-laki,,4-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Dunhill Red,Fresh Woody,Laki-laki,,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Sauvage Louis,Fresh Spicy,Laki-laki,,8-12 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Cappuccino,Kopi Manis,Laki-laki,,5-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
-Black Channel,Woody Elegan,Laki-laki,,6-9 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
+Vigin,Woody Elegan,Laki-laki,,6-9 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 Scandalouis,Woody Elegan,Laki-laki,BEST SELLER,4-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000
 DunhillBlue,Woody Musky,Laki-laki,BEST SELLER,4-7 Jam,Semua Ukuran (10ml - 100ml),Rp. 8.000 - Rp. 50.000

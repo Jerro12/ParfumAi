@@ -17,7 +17,7 @@ rasa_bot/
 │   └── stories.yml      # Skenario cerita dialog interaktif untuk melatih model pembelajaran mesin.
 └── actions/
     ├── __init__.py
-    └── actions.py       # Action Server Python yang memuat dataset 31 parfum skripsi dan logika penyaringan dinamis.
+    └── actions.py       # Action Server Python yang memuat dataset 33 parfum skripsi dan logika penyaringan dinamis.
 ```
 
 ---

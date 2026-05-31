@@ -86,6 +86,11 @@ class ActionRekomendasiParfum(Action):
             'pria', 'cowok', 'laki', 'pria', 'men', 'gents', 'jantan', 'cowo'
         ]) or gender_slot in ['pria', 'cowok', 'laki-laki']
 
+        is_unisex = any(kw in user_message for kw in [
+            'unisex', 'semua gender', 'semua jenis kelamin', 'cocok untuk semua',
+            'bisa untuk wanita dan pria', 'bisa untuk pria dan wanita', 'gender neutral'
+        ]) or gender_slot in ['unisex']
+
         # ---------- Deteksi PREFERENSI AROMA ----------
         is_bestseller = any(kw in user_message for kw in [
             'best seller', 'terlaris', 'favorit', 'laris', 'populer', 'hits', 'top', 'paling banyak'
@@ -131,9 +136,11 @@ class ActionRekomendasiParfum(Action):
             name_lower = p['name'].lower()
             gender_lower = p['gender'].lower()
 
-            if is_female and gender_lower != 'perempuan':
+            if is_female and gender_lower not in ['perempuan', 'unisex']:
                 match = False
-            if is_male and gender_lower != 'laki-laki':
+            if is_male and gender_lower not in ['laki-laki', 'unisex']:
+                match = False
+            if is_unisex and gender_lower != 'unisex':
                 match = False
             if is_bestseller and not p['bestseller']:
                 match = False
@@ -169,9 +176,11 @@ class ActionRekomendasiParfum(Action):
                     continue
                 match = True
                 gender_lower = p['gender'].lower()
-                if is_female and gender_lower != 'perempuan':
+                if is_female and gender_lower not in ['perempuan', 'unisex']:
                     match = False
-                if is_male and gender_lower != 'laki-laki':
+                if is_male and gender_lower not in ['laki-laki', 'unisex']:
+                    match = False
+                if is_unisex and gender_lower != 'unisex':
                     match = False
                 if is_bestseller and not p['bestseller']:
                     match = False
@@ -186,7 +195,9 @@ class ActionRekomendasiParfum(Action):
             results = [p for p in perfumes if p.get('name')][:4]
 
         # ---------- Susun Header Balasan ----------
-        if is_female and is_bestseller:
+        if is_unisex:
+            header = "🌈 **[Dataset] Koleksi Parfum Unisex (Cocok untuk Pria & Wanita):**\n\n"
+        elif is_female and is_bestseller:
             header = "✨ **[Dataset] Berikut adalah koleksi Parfum Wanita Terlaris (Best Seller):**\n\n"
         elif is_male and is_longlasting:
             header = "👑 **[Dataset] Parfum Pria dengan Ketahanan Ekstrem (8-12 Jam):**\n\n"
@@ -200,8 +211,6 @@ class ActionRekomendasiParfum(Action):
             header = "💧 **[Dataset] Koleksi Parfum Fresh & Segar:**\n\n"
         elif is_floral:
             header = "🌸 **[Dataset] Koleksi Parfum Floral & Bunga-Bungaan:**\n\n"
-        elif is_female and is_bestseller:
-            header = "🌸 **[Dataset] Rekomendasi Parfum Wanita Terlaris:**\n\n"
         elif is_female:
             header = "🌸 **[Dataset] Rekomendasi khusus Parfum Wanita:**\n\n"
         elif is_male:
@@ -211,7 +220,7 @@ class ActionRekomendasiParfum(Action):
         elif is_longlasting:
             header = "⏱️ **[Dataset] Parfum dengan Daya Tahan Terlama:**\n\n"
         else:
-            header = "🌟 **[Dataset] Rekomendasi Wewangian Parfumerie AI (36 Varian):**\n\n"
+            header = "🌟 **[Dataset] Rekomendasi Wewangian Parfumerie AI (33 Varian):**\n\n"
 
         # ---------- Susun Body Balasan ----------
         # Urutkan: best seller duluan, lalu berdasarkan ketahanan terlama

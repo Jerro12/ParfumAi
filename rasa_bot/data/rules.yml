@@ -90,3 +90,23 @@ rules:
     steps:
       - intent: tanya_parfum_fresh_segar
       - action: utter_tanya_parfum_fresh_segar
+
+  - rule: Menjawab pengertian parfum
+    steps:
+      - intent: tanya_pengertian_parfum
+      - action: utter_tanya_pengertian_parfum
+
+  - rule: Menjawab manfaat parfum
+    steps:
+      - intent: tanya_manfaat_parfum
+      - action: utter_tanya_manfaat_parfum
+
+  - rule: Menjawab cara kerja parfum
+    steps:
+      - intent: tanya_cara_kerja_parfum
+      - action: utter_tanya_cara_kerja_parfum
+
+  - rule: Menjawab sejarah parfum
+    steps:
+      - intent: tanya_sejarah_parfum
+      - action: utter_tanya_sejarah_parfum
