@@ -4,10 +4,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\BottleSizeController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Shop\CartController;
 use App\Http\Controllers\Shop\OrderHistoryController;
 use App\Models\BottleSize;
 use App\Models\Product;
+use App\Models\SiteSetting;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -21,11 +23,17 @@ Route::get('/', function () {
     }
 
     return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'canLogin'           => Route::has('login'),
+        'canRegister'        => Route::has('register'),
+        'laravelVersion'     => Application::VERSION,
+        'phpVersion'         => PHP_VERSION,
         'dbFeaturedProducts' => $featuredProducts,
+        'heroImage'          => SiteSetting::get('hero_image'),
+        'heroOverlay'        => [
+            'label' => SiteSetting::get('hero_label', 'AI Signature Blend'),
+            'title' => SiteSetting::get('hero_title', "Velour d'Or #99"),
+            'badge' => SiteSetting::get('hero_badge', 'Top 1% Pick'),
+        ],
     ]);
 });
 
@@ -192,7 +200,11 @@ Route::get('/katalog/{id}', function ($id) {
 })->name('katalog.detail');
 
 Route::get('/tentang-kami', function () {
-    return Inertia::render('Shop/TentangKami');
+    return Inertia::render('Shop/TentangKami', [
+        'tentangKisahImage' => SiteSetting::get('tentang_kisah_image'),
+        'tentangKisahLabel' => SiteSetting::get('tentang_kisah_label', 'Koleksi 36 Varian Pilihan'),
+        'tentangKisahDesc'  => SiteSetting::get('tentang_kisah_desc', 'Diformulasikan secara ketat berdasarkan dataset olfaktori teruji untuk menjamin ketahanan dan proyeksi aroma terbaik.'),
+    ]);
 })->name('tentang');
 
 // Rute Keranjang, Checkout, dan Riwayat / Tiket Pengambilan (Dilindungi Middleware Auth agar privat per pengguna)
@@ -377,9 +389,10 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
         return redirect()->back()->with('success', 'Log konsultasi berhasil dihapus.');
     })->name('chatbot.destroy');
 
-    Route::get('/pengaturan', function () {
-        return Inertia::render('Admin/Dashboard');
-    })->name('pengaturan');
+    Route::get('/pengaturan', [SettingController::class, 'index'])->name('pengaturan');
+    Route::post('/pengaturan', [SettingController::class, 'update'])->name('pengaturan.update');
+    Route::post('/pengaturan/reset-hero', [SettingController::class, 'resetHeroImage'])->name('pengaturan.reset-hero');
+    Route::post('/pengaturan/reset-kisah', [SettingController::class, 'resetTentangKisah'])->name('pengaturan.reset-kisah');
 });
 
 Route::middleware('auth')->group(function () {

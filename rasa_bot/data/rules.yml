@@ -110,3 +110,38 @@ rules:
     steps:
       - intent: tanya_sejarah_parfum
       - action: utter_tanya_sejarah_parfum
+
+  - rule: Menjawab query umum tentang wewangian
+    steps:
+      - intent: tanya_umum_wewangian
+      - action: utter_tanya_umum_wewangian
+
+  - rule: Rekomendasi parfum berdasarkan mood
+    steps:
+      - intent: tanya_parfum_mood
+      - action: utter_tanya_parfum_mood
+
+  - rule: Rekomendasi parfum berdasarkan kepribadian
+    steps:
+      - intent: tanya_parfum_kepribadian
+      - action: utter_tanya_parfum_kepribadian
+
+  - rule: Rekomendasi parfum pria maskulin
+    steps:
+      - intent: tanya_parfum_maskulin
+      - action: action_rekomendasi_parfum
+
+  - rule: Rekomendasi parfum wanita manis lembut
+    steps:
+      - intent: tanya_parfum_manis_wanita
+      - action: action_rekomendasi_parfum
+
+  - rule: Penjelasan bahan-bahan parfum
+    steps:
+      - intent: tanya_bahan_parfum
+      - action: utter_tanya_bahan_parfum
+
+  - rule: Penjelasan keluarga aroma olfaktori dunia
+    steps:
+      - intent: tanya_olfactory_family
+      - action: utter_tanya_olfactory_family

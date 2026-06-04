@@ -79,16 +79,17 @@ class ActionRekomendasiParfum(Action):
 
         # ---------- Deteksi GENDER ----------
         is_female = any(kw in user_message for kw in [
-            'wanita', 'cewek', 'perempuan', 'cewe', 'wanite', 'ladies', 'lady'
+            'wanita', 'cewek', 'perempuan', 'cewe', 'wanite', 'ladies', 'lady', 'cewek', 'cewe'
         ]) or gender_slot in ['wanita', 'cewek', 'perempuan']
 
         is_male = any(kw in user_message for kw in [
-            'pria', 'cowok', 'laki', 'pria', 'men', 'gents', 'jantan', 'cowo'
+            'pria', 'cowok', 'laki', 'men', 'gents', 'jantan', 'cowo', 'laki-laki'
         ]) or gender_slot in ['pria', 'cowok', 'laki-laki']
 
         is_unisex = any(kw in user_message for kw in [
             'unisex', 'semua gender', 'semua jenis kelamin', 'cocok untuk semua',
-            'bisa untuk wanita dan pria', 'bisa untuk pria dan wanita', 'gender neutral'
+            'bisa untuk wanita dan pria', 'bisa untuk pria dan wanita', 'gender neutral',
+            'cewek cowok', 'cowok cewek'
         ]) or gender_slot in ['unisex']
 
         # ---------- Deteksi PREFERENSI AROMA ----------
@@ -126,6 +127,25 @@ class ActionRekomendasiParfum(Action):
             'ringan', 'tidak kuat', 'tidak pekat', 'tidak menyengat', 'soft'
         ])
 
+        # ---------- Deteksi MOOD & KEPRIBADIAN ----------
+        is_maskulin = any(kw in user_message for kw in [
+            'maskulin', 'macho', 'jantan', 'pria sejati', 'berwibawa', 'bold', 'kuat',
+            'dominan', 'berani', 'tegas', 'karisma', 'berkarakter'
+        ])
+        is_manis_wanita = any(kw in user_message for kw in [
+            'girly', 'manis banget', 'lembut banget', 'cute', 'lucu', 'kawaii',
+            'perempuan manis', 'wanita manis', 'cewek manis', 'sweet banget'
+        ])
+        is_romantis = any(kw in user_message for kw in [
+            'romantis', 'kencan', 'date', 'intim', 'cinta', 'love'
+        ])
+        is_glamor = any(kw in user_message for kw in [
+            'glamor', 'mewah', 'luxury', 'premium', 'elegan', 'pesta', 'gala'
+        ])
+        is_sporty = any(kw in user_message for kw in [
+            'sporty', 'olahraga', 'gym', 'outdoor', 'aktif', 'energik'
+        ])
+
         # ---------- Filter Dataset ----------
         results = []
         for p in perfumes:
@@ -157,6 +177,18 @@ class ActionRekomendasiParfum(Action):
             if is_vanilla and not any(kw in cat_lower or kw in name_lower for kw in ['vanilla', 'manis', 'sweet', 'creamy', 'cake']):
                 match = False
             if is_spicy and 'spicy' not in cat_lower:
+                match = False
+
+            # Filter mood tambahan
+            if is_maskulin and gender_lower not in ['laki-laki', 'unisex']:
+                match = False
+            if is_manis_wanita and gender_lower not in ['perempuan', 'unisex']:
+                match = False
+            if is_manis_wanita and not any(kw in cat_lower for kw in ['manis', 'sweet', 'vanilla', 'fruity', 'soft', 'creamy', 'romantic']):
+                match = False
+            if is_glamor and not (p.get('bestseller') or any(kw in cat_lower for kw in ['luxury', 'glamor', 'elegan'])):
+                match = False
+            if is_sporty and not any(kw in cat_lower for kw in ['sporty', 'fresh', 'aquatic']):
                 match = False
 
             # Filter ketahanan
@@ -197,6 +229,16 @@ class ActionRekomendasiParfum(Action):
         # ---------- Susun Header Balasan ----------
         if is_unisex:
             header = "🌈 **[Dataset] Koleksi Parfum Unisex (Cocok untuk Pria & Wanita):**\n\n"
+        elif is_maskulin and is_male:
+            header = "🦁 **[Dataset] Parfum Pria Maskulin & Berkarakter Kuat:**\n\n"
+        elif is_glamor:
+            header = "✨ **[Dataset] Koleksi Parfum Mewah & Glamor:**\n\n"
+        elif is_romantis and is_female:
+            header = "🥰 **[Dataset] Parfum Wanita untuk Momen Romantis:**\n\n"
+        elif is_manis_wanita:
+            header = "🍰 **[Dataset] Koleksi Parfum Wanita Manis & Lembut:**\n\n"
+        elif is_sporty:
+            header = "⚡ **[Dataset] Parfum Sporty & Energik:**\n\n"
         elif is_female and is_bestseller:
             header = "✨ **[Dataset] Berikut adalah koleksi Parfum Wanita Terlaris (Best Seller):**\n\n"
         elif is_male and is_longlasting:

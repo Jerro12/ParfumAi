@@ -6,8 +6,12 @@ import { products } from "@/lib/products";
 import { heroImg } from "@/assets/hero-perfume";
 import { Star } from 'lucide-react';
 
-export default function Welcome({ dbFeaturedProducts }) {
+export default function Welcome({ dbFeaturedProducts, heroImage, heroOverlay }) {
   const activeProducts = (dbFeaturedProducts && dbFeaturedProducts.length > 0) ? dbFeaturedProducts : products;
+  const displayHero = heroImage || heroImg;
+  const overlayLabel = heroOverlay?.label || 'AI Signature Blend';
+  const overlayTitle = heroOverlay?.title || "Velour d'Or #99";
+  const overlayBadge = heroOverlay?.badge || 'Top 1% Pick';
 
   return (
     <>
@@ -61,7 +65,7 @@ export default function Welcome({ dbFeaturedProducts }) {
               <div className="relative z-10 flex justify-center font-sans">
                 <div className="relative w-full p-2 bg-gradient-to-tr from-primary/30 via-gold/30 to-forest/30 rounded-3xl shadow-2xl">
                   <img
-                    src={heroImg}
+                    src={displayHero}
                     alt="Koleksi parfum mewah"
                     width={1600}
                     height={1024}
@@ -69,10 +73,10 @@ export default function Welcome({ dbFeaturedProducts }) {
                   />
                   <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-background/80 backdrop-blur-md border border-border flex items-center justify-between shadow-lg">
                     <div className="space-y-0.5">
-                      <p className="text-xs text-primary font-semibold uppercase">AI Signature Blend</p>
-                      <p className="font-serif font-bold text-foreground sm:text-lg">Velour d'Or #99</p>
+                      <p className="text-xs text-primary font-semibold uppercase">{overlayLabel}</p>
+                      <p className="font-serif font-bold text-foreground sm:text-lg">{overlayTitle}</p>
                     </div>
-                    <span className="px-3 py-1 rounded-full bg-gold/20 text-primary text-xs font-bold font-serif">Top 1% Pick</span>
+                    <span className="px-3 py-1 rounded-full bg-gold/20 text-primary text-xs font-bold font-serif">{overlayBadge}</span>
                   </div>
                 </div>
               </div>

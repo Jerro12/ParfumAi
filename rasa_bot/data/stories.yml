@@ -136,3 +136,84 @@ stories:
       - action: utter_tanya_harga
       - intent: goodbye
       - action: utter_goodbye
+
+  - story: Alur user awam belajar lalu cari parfum
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_umum_wewangian
+      - action: utter_tanya_umum_wewangian
+      - intent: tanya_olfactory_family
+      - action: utter_tanya_olfactory_family
+      - intent: cari_parfum
+        entities:
+          - gender: "wanita"
+          - aroma: "floral"
+      - action: action_rekomendasi_parfum
+      - intent: tanya_harga
+      - action: utter_tanya_harga
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi berdasarkan mood dan kepribadian
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_parfum_mood
+      - action: utter_tanya_parfum_mood
+      - intent: tanya_parfum_kepribadian
+      - action: utter_tanya_parfum_kepribadian
+      - intent: cari_parfum
+        entities:
+          - gender: "pria"
+      - action: action_rekomendasi_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur user tanya bahan lalu keluarga aroma
+    steps:
+      - intent: tanya_bahan_parfum
+      - action: utter_tanya_bahan_parfum
+      - intent: tanya_olfactory_family
+      - action: utter_tanya_olfactory_family
+      - intent: tanya_pilih_parfum
+      - action: utter_tanya_pilih_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi parfum maskulin pria
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_parfum_maskulin
+      - action: action_rekomendasi_parfum
+      - intent: tanya_ketahanan
+      - action: action_rekomendasi_parfum
+      - intent: tanya_harga
+      - action: utter_tanya_harga
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur konsultasi parfum wanita manis
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: tanya_parfum_manis_wanita
+      - action: action_rekomendasi_parfum
+      - intent: tanya_parfum_floral
+      - action: utter_tanya_parfum_floral
+      - intent: tanya_tips_tahan_lama
+      - action: utter_tanya_tips_tahan_lama
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Alur dari history user langsung ke rekomendasi
+    steps:
+      - intent: konsultasi_parfum_user_history
+      - action: action_rekomendasi_parfum
+      - intent: tanya_harga
+      - action: utter_tanya_harga
+      - intent: tanya_tips_tahan_lama
+      - action: utter_tanya_tips_tahan_lama
+      - intent: goodbye
+      - action: utter_goodbye

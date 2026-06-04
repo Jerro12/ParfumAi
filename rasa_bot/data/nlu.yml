@@ -23,6 +23,13 @@ nlu:
       - hi
       - hello
       - hallo parfumerie
+      - waalaikumsalam
+      - hai parfumerie
+      - halo ada yang bisa bantu
+      - permisi ada yang bisa bantu
+      - halo selamat datang
+      - hey
+      - hey bot
 
   - intent: goodbye
     examples: |
@@ -41,6 +48,13 @@ nlu:
       - cukup
       - ditutup dulu
       - ok terimakasih banyak
+      - makasih banyak ya
+      - trims
+      - thanks bro
+      - thanks kak
+      - sudah cukup
+      - oke segitu dulu
+      - makasih infonya
 
   - intent: bot_challenge
     examples: |
@@ -54,6 +68,11 @@ nlu:
       - dibuat oleh siapa bot ini
       - kamu aplikasi apa
       - ini bot atau manusia
+      - kamu asisten virtual ya
+      - siapa penciptamu
+      - kamu GPT bukan
+      - ini AI beneran
+      - bot ini pintar gak
 
   - intent: cari_parfum
     examples: |
@@ -87,6 +106,14 @@ nlu:
       - ada parfum [unisex](gender) yang bagus?
       - parfum yang bisa dipakai cowok maupun cewek
       - rekomendasi parfum [gender neutral](gender)
+      - parfum [wanita](gender) paling enak
+      - rekomen parfum [cewek](gender) dong
+      - ada parfum [pria](gender) yang wangi banget
+      - parfum [laki laki](gender) yang keren
+      - sarankan parfum untuk [wanita](gender)
+      - saya ingin parfum untuk [cowok](gender)
+      - parfum untuk [pria](gender) muda
+      - parfum untuk [cewek](gender) remaja
 
   - intent: tanya_bestseller
     examples: |
@@ -105,6 +132,11 @@ nlu:
       - parfum yang paling disukai pelanggan
       - mana yang paling top
       - parfum unggulan toko ini apa
+      - yang paling recommended apa
+      - parfum terlaris minggu ini
+      - yang paling banyak direview positif
+      - pilihan terbaik dari parfumerie
+      - parfum number one disini
 
   - intent: tanya_ketahanan
     examples: |
@@ -123,6 +155,11 @@ nlu:
       - parfum long lasting pria
       - parfum yang tidak perlu sering semprot ulang
       - mana yang paling awet dari semua koleksi
+      - parfum 10 jam ada gak
+      - parfum yang awet banget buat kerja
+      - yang daya tahannya kuat apa
+      - parfum tidak perlu semprot ulang
+      - ketahanan parfum sauvage berapa jam
 
   - intent: tanya_kopi_vanilla
     examples: |
@@ -141,6 +178,11 @@ nlu:
       - mana yang kopi banget
       - parfum wanginya seperti minuman kopi
       - sweet and warm fragrance ada?
+      - parfum aroma cappuccino
+      - wangi yang ada aroma kopinya
+      - parfum sweet gourmand apa
+      - parfum wangi kue ulang tahun
+      - aroma vanilla creamy ada gak
 
   - intent: konsultasi_parfum_user_history
     examples: |
@@ -148,6 +190,26 @@ nlu:
       - Parfum untuk acara formal yang elegan
       - Rekomendasi parfum bunga lembut dong
       - Parfum pria yang segar dan maskulin
+      - Parfum wanita best seller
+      - Parfum pria tahan lama 8-12 jam
+      - Aroma manis vanilla atau kopi
+      - Laki-Laki
+      - perempuan
+      - parfum pria
+      - parfum wanita
+      - parfum wanita manis
+      - parfum pria tahan lama
+      - wanita
+      - parfum wanita tahan lama
+      - parfum pria maskulin
+      - parfum wanita soft
+      - parfum pria best seller
+      - parfum pria aroma kopi
+      - sarankan saya parfum aroma soft
+      - rekoemndasi parfum wanita
+      - parfum unisex
+      - parfum cewek cowok
+      - rekomendasi parfum unisex
       - wangi lama
       - saya mau cari parfum wanita
       - apakah kamu rekomendasi untuk parfum wanita yang tahan lama
@@ -159,6 +221,16 @@ nlu:
       - saya bingung mau pilih yang mana
       - kasih tau parfum yang bagus
       - saya mau beli parfum tapi bingung
+      - mau beli wewangian
+      - pilih parfum dong
+      - tolong rekomendasikan parfum
+      - bantu pilih wewangian
+      - cariin parfum yang enak buat saya
+      - saya tertarik beli parfum
+      - ada rekomendasi parfum
+      - parfum apa yang bagus
+      - saran parfum dong
+      - mau beli parfum yang enak
 
   - intent: tanya_edp_edt
     examples: |
@@ -177,6 +249,11 @@ nlu:
       - kenapa parfum ada berbagai jenisnya
       - perbedaan eau de cologne dan eau de toilette
       - parfum extrait itu apa
+      - edp vs edt mana yang lebih bagus
+      - konsentrasi minyak parfum itu apa
+      - parfum pekat itu jenisnya apa
+      - mana yang lebih murah edp atau edt
+      - bedanya parfum dan cologne itu apa
 
   - intent: tanya_tips_tahan_lama
     examples: |
@@ -195,6 +272,11 @@ nlu:
       - trik agar parfum tidak cepat habis
       - tips penyemprotan parfum yang benar
       - cara agar parfum menempel lebih lama di kulit
+      - cara semprot parfum yang tepat di mana
+      - apakah boleh parfum disemprot ke baju
+      - berapa jarak semprot parfum yang ideal
+      - titik nadi itu di mana untuk parfum
+      - cara memakai parfum yang efektif
 
   - intent: tanya_cara_simpan
     examples: |
@@ -213,6 +295,11 @@ nlu:
       - boleh tidak parfum kena cahaya matahari
       - parfum yang sudah lama masih bagus tidak
       - cara merawat koleksi parfum
+      - parfum disimpan di tempat gelap atau terang
+      - apakah parfum perlu disimpan di suhu tertentu
+      - parfum kena panas apakah rusak
+      - tanda-tanda parfum sudah tidak layak pakai
+      - cara agar botol parfum awet
 
   - intent: tanya_tentang_notes
     examples: |
@@ -231,6 +318,11 @@ nlu:
       - mengapa top notes cepat menghilang
       - middle notes itu apa
       - jelaskan lapisan aroma dalam parfum
+      - kenapa parfum saya berubah setelah 1 jam
+      - base notes parfum itu apa saja
+      - dry down parfum itu kapan
+      - piramida aroma parfum itu apa
+      - mengapa parfum tidak langsung tercium aroma utamanya
 
   - intent: tanya_pilih_parfum
     examples: |
@@ -249,6 +341,11 @@ nlu:
       - cara test parfum sebelum beli
       - parfum apa yang pas untuk introvert
       - parfum buat orang aktif berolahraga
+      - bagaimana cara milih parfum yang tepat
+      - parfum signature itu apa
+      - cara nemuin parfum yang cocok sama kulit saya
+      - parfum untuk pemula itu apa
+      - saya baru pertama mau beli parfum mulai dari mana
 
   - intent: tanya_harga
     examples: |
@@ -267,6 +364,11 @@ nlu:
       - apakah ada paket harga
       - harga mulai dari berapa
       - berapa kisaran harga parfum di toko ini
+      - harga parfum 10ml berapa
+      - parfum ukuran kecil harganya berapa
+      - daftar harga lengkap parfumerie
+      - berapa harga parfum 100ml
+      - harga semua ukuran berapa
 
   - intent: tanya_produk_spesifik
     examples: |
@@ -285,6 +387,11 @@ nlu:
       - scandalouis wanginya gimana
       - cerita dong tentang parfum ariana grande
       - parfum victoria secret wanginya bagaimana
+      - baccarat dubai itu baunya gimana
+      - black pink parfumnya seperti apa
+      - cappuccino parfum itu aroma apa
+      - vigin parfum itu aroma apa
+      - baby love parfum wanginya bagaimana
 
   - intent: tanya_parfum_acara
     examples: |
@@ -303,6 +410,11 @@ nlu:
       - parfum untuk gym
       - parfum untuk nonton konser
       - wangi yang cocok untuk sehari-hari
+      - parfum untuk ngantor yang tidak menyengat
+      - parfum untuk ulang tahun orang lain
+      - parfum untuk meeting penting
+      - parfum untuk traveling
+      - parfum buat liburan outdoor
 
   - intent: tanya_parfum_floral
     examples: |
@@ -321,6 +433,11 @@ nlu:
       - wangi bunga yang elegan
       - parfum seperti bunga musim semi
       - parfum feminim dengan aroma bunga
+      - parfum yang wangi mawar
+      - parfum dengan kandungan jasmine
+      - parfum floral untuk wanita muda
+      - parfum bunga yang romantis
+      - aroma bunga yang lembut untuk perempuan
 
   - intent: tanya_parfum_fresh_segar
     examples: |
@@ -339,6 +456,11 @@ nlu:
       - parfum yang wanginya kayak setelah mandi
       - parfum crisp dan clean
       - rekomendasi parfum yang fresh untuk kerja
+      - parfum yang ringan tidak menyengat
+      - parfum airy dan clean
+      - parfum buat pagi hari yang segar
+      - parfum tidak berat untuk cuaca panas Indonesia
+      - parfum sporty yang segar
 
   - intent: tanya_pengertian_parfum
     examples: |
@@ -357,6 +479,11 @@ nlu:
       - definisikan parfum untuk saya
       - apa itu fragrance
       - parfum dan wewangian itu sama gak
+      - penegertian parfum
+      - pengertain parfum
+      - apa pengertian dari parfum
+      - parfum itu apa ya secara umum
+      - definisi wewangian
 
   - intent: tanya_manfaat_parfum
     examples: |
@@ -375,6 +502,11 @@ nlu:
       - parfum bisa bikin orang lebih percaya diri
       - pengaruh parfum terhadap psikologi
       - manfaat aroma terapi dari parfum
+      - apa manfaat memakai parfum
+      - kenapa orang memakai parfum
+      - apa pentingnya parfum dalam kehidupan
+      - manfaat kesehatan dari parfum
+      - parfum bisa ngurangi stress
 
   - intent: tanya_cara_kerja_parfum
     examples: |
@@ -393,6 +525,11 @@ nlu:
       - ilmu di balik wangi parfum itu gimana
       - bagaimana hidung kita mencium aroma parfum
       - parfum diproses oleh tubuh bagaimana
+      - kenapa parfum saya beda di kulit teman saya
+      - kimia tubuh mempengaruhi parfum ya
+      - mengapa parfum tercium berbeda oleh orang lain
+      - proses penguapan parfum itu bagaimana
+      - reseptor penciuman bekerja bagaimana dengan parfum
 
   - intent: tanya_sejarah_parfum
     examples: |
@@ -411,3 +548,173 @@ nlu:
       - bagaimana sejarah industri parfum
       - apakah parfum sudah ada sejak zaman kuno
       - parfum di mesir kuno itu seperti apa
+      - sejarah wewangian di dunia
+      - parfum arab atau timur tengah itu bagaimana sejarahnya
+      - perkembangan industri parfum dari dulu sampai sekarang
+      - parfum di zaman romawi seperti apa
+      - siapa ibnu sina dan hubungannya dengan parfum
+
+  # =============================================
+  # INTENT BARU: PENGETAHUAN MENDALAM PARFUM
+  # =============================================
+
+  - intent: tanya_umum_wewangian
+    examples: |
+      - edukasi wewangian
+      - tentang parfum
+      - tenatng parfum
+      - ruang lingkup parfum
+      - apa yang perlu saya tahu tentang parfum
+      - edukasi seputar parfum
+      - pengetahuan dasar parfum
+      - overview tentang wewangian
+      - kasih tahu saya tentang parfum
+      - informasi umum tentang wewangian
+      - pelajari tentang parfum
+      - apa saja yang perlu diketahui tentang wewangian
+      - pengenalan parfum untuk pemula
+      - panduan parfum untuk awam
+      - parfum 101 itu apa
+      - mau belajar tentang parfum dari mana mulainya
+      - saya awam soal parfum tolong jelaskan
+      - penjelasan lengkap tentang parfum
+      - dasar-dasar ilmu parfum
+      - saya ingin memahami parfum lebih dalam
+
+  - intent: tanya_parfum_mood
+    examples: |
+      - parfum buat suasana hati yang baik
+      - wewangian yang bikin semangat
+      - parfum kalau lagi sedih
+      - parfum romantis
+      - parfum buat bikin suasana hati happy
+      - parfum yang cocok buat kencan romantis
+      - wewangian untuk moodbooster
+      - parfum yang bisa bikin happy
+      - parfum untuk suasana yang menenangkan
+      - parfum buat relax
+      - wewangian untuk meningkatkan mood
+      - parfum untuk semangat kerja
+      - parfum yang bikin rileks
+      - parfum untuk suasana romantis malam
+      - parfum yang cocok untuk acara intimate
+      - wewangian yang energizing
+      - parfum untuk pede saat meeting
+      - parfum yang membuat percaya diri
+      - aroma yang menenangkan pikiran
+      - parfum untuk meditasi dan relaksasi
+
+  - intent: tanya_parfum_kepribadian
+    examples: |
+      - parfum yang cocok untuk orang introvert
+      - parfum sesuai karakter saya
+      - parfum untuk orang yang aktif dan energik
+      - parfum yang mencerminkan kepribadian elegan
+      - parfum untuk orang yang minimalis
+      - wewangian yang mencerminkan karakter
+      - parfum untuk kepribadian yang playful
+      - saya tipe orang yang serius parfum apa yang cocok
+      - parfum untuk orang muda dan dinamis
+      - wewangian untuk orang yang dewasa dan sophisticated
+      - parfum untuk orang yang suka alam
+      - parfum untuk kepribadian yang lembut
+      - parfum sesuai tipe diri saya
+      - parfum mencerminkan siapa saya
+      - wewangian untuk karakter yang kuat dan percaya diri
+      - parfum untuk orang yang romantis
+      - parfum yang cocok untuk extrovert
+      - parfum untuk orang yang suka petualangan
+      - parfum sesuai zodiak
+      - parfum berdasarkan kepribadian MBTI
+
+  - intent: tanya_parfum_maskulin
+    examples: |
+      - parfum pria yang maskulin banget
+      - parfum yang jantan
+      - wewangian yang macho
+      - parfum cowok yang berat dan berani
+      - parfum pria yang berkarakter kuat
+      - wangi maskulin yang khas
+      - parfum untuk laki-laki sejati
+      - parfum pria yang berwibawa
+      - parfum untuk cowok yang berkarisma
+      - wewangian maskulin dan bold
+      - parfum pria yang tidak feminin sama sekali
+      - parfum cowok yang deep dan strong
+      - aroma maskulin terbaik untuk pria
+      - parfum yang bikin cowok makin menarik
+      - parfum pria yang dominan dan kuat
+      - parfum pria elegan maskulin
+      - wewangian maskulin dan profesional
+      - parfum cowok yang mature
+      - parfum pria yang sophisticated
+      - wewangian maskulin untuk pria dewasa
+
+  - intent: tanya_parfum_manis_wanita
+    examples: |
+      - parfum wanita manis banget
+      - parfum perempuan yang lembut dan manis
+      - parfum cewek yang girly
+      - parfum untuk wanita yang feminin dan manis
+      - wewangian wanita yang cute dan manis
+      - parfum cewek yang sweet banget
+      - parfum wanita yang lembut
+      - aroma manis untuk perempuan
+      - parfum wanita yang fruity manis
+      - parfum perempuan yang lembut soft
+      - wangi yang manis dan girly banget
+      - parfum untuk cewe yang suka manis
+      - parfum cewek yang vanilla banget
+      - parfum wanita yang harum dan manis
+      - aroma manis creamy untuk wanita
+      - parfum perempuan yang soft dan lembut
+      - wewangian wanita yang powdery manis
+      - parfum cewek muda yang manis
+      - parfum remaja perempuan yang manis
+      - parfum wanita yang tidak terlalu kuat tapi manis
+
+  - intent: tanya_bahan_parfum
+    examples: |
+      - parfum dibuat dari bahan apa saja
+      - kandungan dalam parfum itu apa
+      - bahan alami yang dipakai dalam parfum
+      - parfum mengandung apa
+      - bahan baku pembuatan parfum
+      - apa saja bahan utama parfum
+      - komposisi parfum itu terdiri dari apa
+      - bahan sintetis dalam parfum apa aja
+      - parfum dari bunga atau bahan kimia
+      - apa itu musk dalam parfum
+      - apa itu oud dalam parfum
+      - bahan amber dalam parfum itu apa
+      - apa itu bergamot dalam parfum
+      - bahan alami parfum mewah apa saja
+      - parfum menggunakan alkohol tidak
+      - kandungan etanol dalam parfum
+      - bahan fiksatif dalam parfum itu apa
+      - apa itu sandalwood dalam parfum
+      - bahan-bahan parfum oriental itu apa
+      - proses pembuatan parfum dari bahan alami
+
+  - intent: tanya_olfactory_family
+    examples: |
+      - keluarga aroma parfum ada apa saja
+      - parfum oriental itu apa
+      - aroma chypre itu seperti apa
+      - kategori wewangian dunia apa saja
+      - olfactory family itu apa
+      - kelompok wewangian apa saja yang ada
+      - parfum gourmand itu apa
+      - parfum fougere itu apa
+      - parfum aquatic itu bagaimana
+      - jenis-jenis kategori parfum dunia
+      - parfum woody itu masuk keluarga apa
+      - parfum floral itu keluarga wewangian apa
+      - kategori parfum berdasarkan aromanya
+      - apa bedanya parfum oriental dan floral
+      - klasifikasi parfum berdasarkan keluarga aroma
+      - apa itu parfum chypre
+      - parfum amber itu termasuk keluarga apa
+      - keluarga aroma woody itu seperti apa
+      - parfum aromatik fougere itu apa
+      - pengelompokan jenis wewangian internasional

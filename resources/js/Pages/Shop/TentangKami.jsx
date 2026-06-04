@@ -4,7 +4,10 @@ import { ChatbotWidget } from '@/Components/ChatbotWidget';
 import { Head, Link } from '@inertiajs/react';
 import { Sparkles, ShieldCheck, Heart, Bot, Store, MapPin, Clock, Phone, Award, Compass, ArrowRight } from 'lucide-react';
 
-export default function TentangKami() {
+export default function TentangKami({ tentangKisahImage, tentangKisahLabel, tentangKisahDesc }) {
+    const kisahSrc = tentangKisahImage || 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800&auto=format&fit=crop';
+    const kisahLabel = tentangKisahLabel || 'Koleksi 36 Varian Pilihan';
+    const kisahDesc  = tentangKisahDesc  || 'Diformulasikan secara ketat berdasarkan dataset olfaktori teruji untuk menjamin ketahanan dan proyeksi aroma terbaik.';
     return (
         <div className="min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
             <Head title="Tentang Kami — Parfumerie AI" />
@@ -37,14 +40,14 @@ export default function TentangKami() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="relative h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl border border-border">
                             <img
-                                src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800&auto=format&fit=crop"
+                                src={kisahSrc}
                                 alt="Seni Meracik Parfum"
                                 className="w-full h-full object-cover hover:scale-105 transition duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
                             <div className="absolute bottom-8 left-8 right-8 p-6 bg-background/85 backdrop-blur-md rounded-2xl border border-border/80">
-                                <div className="font-serif font-bold text-xl text-foreground">Koleksi 36 Varian Pilihan</div>
-                                <p className="text-xs text-muted-foreground mt-1">Diformulasikan secara ketat berdasarkan dataset olfaktori teruji untuk menjamin ketahanan dan proyeksi aroma terbaik.</p>
+                                <div className="font-serif font-bold text-xl text-foreground">{kisahLabel}</div>
+                                <p className="text-xs text-muted-foreground mt-1">{kisahDesc}</p>
                             </div>
                         </div>
 
@@ -166,20 +169,22 @@ export default function TentangKami() {
                             </div>
                         </div>
 
-                        {/* Map Illustration Box */}
-                        <div className="h-80 rounded-2xl bg-secondary/80 border border-border/80 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group shadow-inner">
-                            <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] opacity-5 [background-size:16px_16px]" />
-                            <Store size={64} className="text-gold mb-4 group-hover:scale-110 transition duration-500" />
-                            <div className="font-serif font-bold text-xl text-foreground">Butik Pusat Parfumerie AI</div>
-                            <p className="text-xs text-muted-foreground max-w-xs mt-2">Pusat pencampuran wewangian premium dan titik pengambilan in-store terverifikasi.</p>
-                            <a
-                                href="https://maps.google.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="mt-6 px-6 py-2.5 bg-primary text-primary-foreground rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:opacity-90 transition inline-flex items-center gap-1.5"
-                            >
-                                <MapPin size={14} /> Buka di Google Maps
-                            </a>
+                        {/* Map / Butik Image Box */}
+                        <div className="h-80 rounded-2xl border border-border/80 overflow-hidden relative group shadow-inner">
+                            <div className="h-full bg-secondary/80 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+                                <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] opacity-5 [background-size:16px_16px]" />
+                                <Store size={64} className="text-gold mb-4 group-hover:scale-110 transition duration-500" />
+                                <div className="font-serif font-bold text-xl text-foreground">Butik Pusat Parfumerie AI</div>
+                                <p className="text-xs text-muted-foreground max-w-xs mt-2">Pusat pencampuran wewangian premium dan titik pengambilan in-store terverifikasi.</p>
+                                <a
+                                    href="https://maps.google.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="mt-6 px-6 py-2.5 bg-primary text-primary-foreground rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:opacity-90 transition inline-flex items-center gap-1.5"
+                                >
+                                    <MapPin size={14} /> Buka di Google Maps
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>

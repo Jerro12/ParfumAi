@@ -23,12 +23,21 @@ intents:
   - tanya_manfaat_parfum
   - tanya_cara_kerja_parfum
   - tanya_sejarah_parfum
+  - tanya_umum_wewangian
+  - tanya_parfum_mood
+  - tanya_parfum_kepribadian
+  - tanya_parfum_maskulin
+  - tanya_parfum_manis_wanita
+  - tanya_bahan_parfum
+  - tanya_olfactory_family
 
 entities:
   - gender
   - aroma
   - ketahanan
   - bestseller
+  - mood
+  - acara
 
 slots:
   gender:
@@ -51,6 +60,16 @@ slots:
     mappings:
       - type: from_entity
         entity: bestseller
+  mood:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mood
+  acara:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: acara
 
 responses:
   utter_greet:
@@ -108,6 +127,21 @@ responses:
 
   utter_tanya_sejarah_parfum:
     - text: "📜 **[AI Sommelier - Edukasi Wewangian] Sejarah Parfum Sepanjang Peradaban Manusia**\n\nParfum adalah salah satu hasil karya peradaban manusia tertua yang masih eksis hingga hari ini. Berikut perjalanan panjangnya:\n\n🏛️ **Zaman Kuno (±4.000 Tahun SM) — Mesir & Mesopotamia**\nParfum pertama kali digunakan dalam upacara **ritual keagamaan dan pemujaan dewa-dewi**. Bangsa Mesir Kuno membakar kayu aromatik (kemenyan/frankincense) dan resin dalam upacara persembahan. Kata **'parfum'** sendiri berasal dari bahasa Latin *'per fumum'* (melalui asap), merujuk pada tradisi ini.\n\n🏺 **Zaman Yunani & Romawi Kuno (±500 SM - 400 M)**\nBangsa Yunani mengembangkan parfum berbahan dasar **minyak zaitun** yang dicampur dengan bunga dan rempah. Bangsa Romawi kemudian memopulerkan penggunaan wewangian dalam kehidupan sehari-hari: mandi, pakaian, dan istana kerajaan.\n\n🕌 **Zaman Islam & Arab (Abad 9 - 12 M) — Era Keemasan**\nIlmuwan Muslim, **Ibnu Sina (Avicenna)**, menemukan teknik **distilasi uap air** yang revolusioner, memungkinkan ekstraksi minyak esensial murni dari bunga mawar untuk pertama kalinya. Teknik inilah yang menjadi fondasi industri parfum modern.\n\n🌹 **Era Renaissance Eropa (Abad 14 - 17 M)**\nParfum cair pertama di dunia, **Eau de Hongrie** (1370 M), diciptakan di Eropa menggunakan alkohol sebagai pelarut. Kota **Grasse, Prancis** berkembang menjadi ibu kota parfum dunia berkat kebun lavender, mawar, dan melatinya yang melimpah.\n\n🏭 **Era Industri & Modern (Abad 19 M - Sekarang)**\nDengan munculnya kimia sintetis, wewangian buatan manusia (seperti **Aldehyde C-11** yang dipakai Chanel No.5) membuka era baru yang memungkinkan penciptaan aroma yang tidak ada di alam. Hari ini, industri parfum global bernilai lebih dari **USD 50 Miliar** per tahun!\n\n🇮🇩 *Fakta Lokal*: Indonesia adalah penghasil bahan wewangian alami berkualitas dunia, seperti **Nilam (Patchouli)** dari Aceh yang menjadi bahan fiksatif paling dicari oleh rumah parfum mewah Prancis!"
+
+  utter_tanya_umum_wewangian:
+    - text: "🌸 **[AI Sommelier - Panduan Lengkap] Mengenal Dunia Wewangian (Parfumerie 101)**\n\nSelamat datang di dunia wewangian! Berikut adalah semua yang perlu Anda ketahui:\n\n---\n\n**📌 1. Apa Itu Parfum?**\nParfum adalah campuran bahan aromatik (alami & sintetis) dalam pelarut etanol, dirancang untuk menciptakan aroma yang menyenangkan dan bertahan di kulit.\n\n---\n\n**🏺 2. Jenis Parfum Berdasarkan Konsentrasi:**\n| Jenis | Konsentrasi | Ketahanan |\n|---|---|---|\n| Extrait de Parfum | 20-40% | 8-12 Jam+ |\n| Eau de Parfum (EDP) | 15-20% | 6-8 Jam |\n| Eau de Toilette (EDT) | 5-15% | 3-5 Jam |\n| Eau de Cologne (EDC) | 2-4% | 1-2 Jam |\n\n---\n\n**🎵 3. Piramida Aroma (Scent Notes):**\n• 🍋 **Top Notes** (0-15 menit): Aroma pembuka — segar, ringan\n• 🌸 **Middle Notes** (15 menit - 2 jam): Inti kepribadian parfum\n• 🪵 **Base Notes** (2 jam+): Fondasi yang dalam dan tahan lama\n\n---\n\n**🌍 4. Keluarga Aroma Utama:**\n• **Floral** — Rose, Jasmine, Lily (untuk: Wanita Elegan)\n• **Oriental/Amber** — Vanilla, Oud, Rempah (untuk: Mewah & Hangat)\n• **Woody** — Sandalwood, Cedar, Musk (untuk: Maskulin & Natural)\n• **Fresh** — Citrus, Aquatic, Green (untuk: Kasual & Energik)\n• **Gourmand** — Kopi, Vanilla, Coklat (untuk: Manis & Adiktif)\n\n---\n\n**💡 5. Tips Memilih Parfum Pertama Kali:**\n1. Kenali preferensi aroma Anda (manis/segar/floral/woody?)\n2. Sesuaikan dengan aktivitas (kantor/pesta/sehari-hari)\n3. Test di kulit, tunggu 30 menit sebelum memutuskan\n4. Pilih EDP untuk ketahanan lebih lama\n\n🛒 Parfumerie AI memiliki **33 varian** dari berbagai keluarga aroma. Ketik *cari parfum* untuk rekomendasi personal!"
+
+  utter_tanya_parfum_mood:
+    - text: "😊 **[AI Sommelier - Panduan Mood] Parfum Sesuai Suasana Hati Anda**\n\nAroma memiliki kekuatan luar biasa untuk mempengaruhi emosi dan suasana hati. Inilah panduan memilih parfum berdasarkan mood:\n\n---\n\n🥰 **MOOD: Romantis & Intim**\n→ Pilih: Aroma **Manis Hangat** atau **Floral Sensual**\n✨ Rekomendasi: *Vanilla Ice* (Vanilla Creamy), *Nagita Slavina* (Manis Soft), *Secret Love* (Sweet Romantic)\n\n---\n\n⚡ **MOOD: Semangat & Energik**\n→ Pilih: Aroma **Fresh Citrus** atau **Sporty Aquatic**\n✨ Rekomendasi: *Polo Sports* (Sporty Fresh), *Blue Channel* (Fresh), *Zara Wonder Rose* (Fruity Fresh)\n\n---\n\n🧘 **MOOD: Tenang & Relaks**\n→ Pilih: Aroma **Soft Powdery** atau **Light Floral**\n✨ Rekomendasi: *Soft* (Soft Powdery), *Avril Rose* (Soft), *Baby Love* (Fresh Calming)\n\n---\n\n💼 **MOOD: Percaya Diri & Profesional**\n→ Pilih: Aroma **Woody Elegan** atau **Fresh Spicy**\n✨ Rekomendasi: *Scandalouis* (Woody Elegan), *Sauvage Louis* (Fresh Spicy), *212 Men* (Fresh Spicy)\n\n---\n\n☕ **MOOD: Hangat & Nyaman (Cozy)**\n→ Pilih: Aroma **Gourmand** (Kopi/Vanilla)\n✨ Rekomendasi: *Black Opium* (Kopi Manis), *Cappuccino* (Kopi Manis), *Vanilla Cake* (Sweet Vanilla)\n\n---\n\n✨ **MOOD: Mewah & Glamor**\n→ Pilih: Aroma **Luxury** atau **Amber Orientale**\n✨ Rekomendasi: *Baccarat Dubai* (Luxury Manis), *Princess Syahrini* (Glamor)\n\n💡 *Tips Sommelier*: Semprotkan parfum di titik nadi (pergelangan tangan & leher) 30 menit sebelum momen penting untuk hasil terbaik!"
+
+  utter_tanya_parfum_kepribadian:
+    - text: "🧬 **[AI Sommelier - Panduan Kepribadian] Wewangian Sesuai Karakter Anda**\n\nParfum yang tepat adalah perpanjangan dari kepribadian Anda. Temukan wewangian yang mencerminkan jati diri:\n\n---\n\n🦁 **KEPRIBADIAN: Kuat, Berani & Dominan**\n→ Karakter: Tegas, percaya diri, pemimpin\n→ Rekomendasi: **Baccarat Dubai** (Luxury Manis) atau **Sauvage Louis** (Fresh Spicy)\n→ Mengapa: Aroma berat dan tahan lama mencerminkan karakter yang kuat\n\n---\n\n🌸 **KEPRIBADIAN: Lembut, Feminin & Romantis**\n→ Karakter: Anggun, perhatian, hangat\n→ Rekomendasi: **Nagita Slavina** (Manis Soft) atau **White Rose** (Flower)\n→ Mengapa: Floral dan powdery yang lembut mencerminkan kelembutan\n\n---\n\n⚡ **KEPRIBADIAN: Aktif, Energik & Dinamis**\n→ Karakter: Suka berolahraga, adventurous, outdoor\n→ Rekomendasi: **Polo Sports** (Sporty Fresh) atau **Bvlgari Aqva** (Fresh Cold)\n→ Mengapa: Aroma aquatic dan sporty mencerminkan semangat hidup\n\n---\n\n🎭 **KEPRIBADIAN: Kreatif, Unik & Playful**\n→ Karakter: Ekspresif, fun, tidak konvensional\n→ Rekomendasi: **Selena Gomez** (Fruity Manis) atau **Black Pink** (Manis Creamy)\n→ Mengapa: Aroma fruity yang ceria dan playful cocok untuk jiwa bebas\n\n---\n\n🏛️ **KEPRIBADIAN: Elegan, Sophisticated & Minimalis**\n→ Karakter: Classy, dewasa, stylish\n→ Rekomendasi: **Scandalouis** (Woody Elegan) atau **DunhillBlue** (Woody Musky)\n→ Mengapa: Woody elegan mencerminkan kedewasaan dan keanggunan\n\n---\n\n🌿 **KEPRIBADIAN: Natural, Kasual & Earthy**\n→ Karakter: Suka alam, sederhana, low-key\n→ Rekomendasi: **Baby Love** (Fresh Calming) atau **Dunhill Red** (Fresh Woody)\n→ Mengapa: Aroma natural dan calming mencerminkan jiwa yang grounded\n\n💡 *Tips*: Parfum terbaik adalah yang terasa seperti 'bagian dari diri Anda' — bukan yang dipilih karena tren!"
+
+  utter_tanya_bahan_parfum:
+    - text: "⚗️ **[AI Sommelier - Edukasi Wewangian] Bahan-Bahan dalam Parfum**\n\nParfum adalah mahakarya kimia yang menggabungkan bahan alami dan sintetis. Berikut penjelasan lengkapnya:\n\n---\n\n🌿 **BAHAN ALAMI (Natural Ingredients)**\n\n• 🌹 **Minyak Bunga** — Rosa, Jasmine, Ylang-ylang, Neroli\n   → Diekstrak melalui distilasi uap atau enfleurage dari kelopak bunga\n• 🌳 **Kayu & Resin** — Sandalwood, Cedarwood, Frankincense, Myrrh\n   → Memberikan base notes yang hangat, dalam, dan tahan lama\n• 🍊 **Kulit Jeruk & Buah** — Bergamot, Lemon, Grapefruit, Blackcurrant\n   → Menciptakan top notes yang segar dan menyenangkan\n• 🦝 **Musk Alami** — Ambergris (dari paus sperma), Musk rusa\n   → Bahan fiksatif langka yang membuat aroma bertahan lama\n• 🌴 **Bahan Eksotis** — Oud (Agarwood dari Asia Tenggara), Vetiver, Patchouli Nilam\n\n---\n\n🔬 **BAHAN SINTETIS (Synthetic Molecules)**\n\n• **Aldehyde** — Senyawa sintetis yang menciptakan aroma bersih seperti Chanel No.5\n• **Muskon Sintetis** — Pengganti musk alami yang lebih etis dan terjangkau\n• **Ambroxan** — Sintetis pengganti ambergris, memberikan efek warm & sensual\n• **ISO E Super** — Molekul woody yang memberikan efek 'silky skin'\n\n---\n\n🧪 **STRUKTUR DASAR PARFUM**\n\n| Komponen | Fungsi | Persentase |\n|---|---|---|\n| Minyak Esensial | Bahan aromatik utama | 5-40% |\n| Pelarut (Etanol) | Membawa & menyebarkan aroma | 70-95% |\n| Air Distilasi | Mengencerkan & memperhalus | 0-20% |\n| Fiksatif | Memperpanjang daya tahan | Sesuai formula |\n\n---\n\n🇮🇩 *Fakta Indonesia*: **Nilam (Patchouli)** dari Aceh adalah salah satu bahan fiksatif paling dicari oleh rumah parfum mewah Paris! Indonesia juga penghasil **Sandalwood** kelas dunia dari NTT."
+
+  utter_tanya_olfactory_family:
+    - text: "🌍 **[AI Sommelier - Edukasi Wewangian] 8 Keluarga Aroma Parfum Dunia**\n\nDunia parfumeri membagi semua wewangian ke dalam **keluarga aroma (Olfactory Families)**. Mengenal ini membantu Anda memilih parfum dengan lebih tepat:\n\n---\n\n🌸 **1. FLORAL**\n→ Deskripsi: Aroma bunga-bungaan, feminin, romantis, klasik\n→ Contoh bahan: Rose, Jasmine, Lily, Peony, Tuberose\n→ Cocok untuk: Wanita, acara romantis, siang hari\n→ *Dari koleksi kami*: **White Rose**, **Lovely Sarah**, **Victoria Secret**\n\n---\n\n🔶 **2. ORIENTAL / AMBER**\n→ Deskripsi: Hangat, kaya, sensual, mewah, eksotis\n→ Contoh bahan: Amber, Vanilla, Oud, Rempah, Resin\n→ Cocok untuk: Malam hari, acara formal, musim dingin\n→ *Dari koleksi kami*: **Baccarat Dubai**, **Black Opium**\n\n---\n\n🌲 **3. WOODY**\n→ Deskripsi: Natural, maskulin, earthy, elegan\n→ Contoh bahan: Sandalwood, Cedar, Vetiver, Patchouli\n→ Cocok untuk: Pria, acara bisnis, keseharian\n→ *Dari koleksi kami*: **Scandalouis**, **DunhillBlue**, **Vigin**\n\n---\n\n💧 **4. FRESH / CITRUS**\n→ Deskripsi: Bersih, segar, energik, ringan\n→ Contoh bahan: Lemon, Bergamot, Grapefruit, Mint, Aquatic\n→ Cocok untuk: Siang hari, olahraga, cuaca panas\n→ *Dari koleksi kami*: **Polo Sports**, **Bvlgari Aqva**, **Blue Channel**\n\n---\n\n☕ **5. GOURMAND**\n→ Deskripsi: Manis seperti makanan, adiktif, comfort scent\n→ Contoh bahan: Vanilla, Coklat, Kopi, Karamel, Honey\n→ Cocok untuk: Kasual, musim dingin, orang yang suka manis\n→ *Dari koleksi kami*: **Vanilla Cake**, **Cappuccino**, **Vanilla Ice**\n\n---\n\n🍓 **6. FRUITY**\n→ Deskripsi: Segar buah-buahan, playful, manis ringan\n→ Contoh bahan: Berry, Peach, Apple, Mango, Pear\n→ Cocok untuk: Wanita muda, siang hari, kasual\n→ *Dari koleksi kami*: **Selena Gomez**, **Zara Wonder Rose**, **Secret Wish**\n\n---\n\n🌿 **7. FOUGÈRE**\n→ Deskripsi: Aromatic herbal, maskulin klasik, clean\n→ Contoh bahan: Lavender, Oakmoss, Coumarin, Bergamot\n→ Cocok untuk: Pria, sehari-hari, kasual\n→ *Dari koleksi kami*: **212 Men**, **Baby Love**\n\n---\n\n🌊 **8. AQUATIC / MARINE**\n→ Deskripsi: Seperti angin laut, bersih, modern, segar\n→ Contoh bahan: Calone, Sea Salt, Ambergris, Aldehydes\n→ Cocok untuk: Pria & wanita, outdoor, musim panas\n→ *Dari koleksi kami*: **Aqua Kiss**, **Bvlgari Aqva**\n\n💡 *Tips Sommelier*: Jika Anda tidak tahu suka aroma apa, mulailah dari **Fresh/Fruity** (paling disukai secara universal) lalu eksplorasi ke Oriental atau Woody seiring waktu!"
 
 actions:
   - action_rekomendasi_parfum
