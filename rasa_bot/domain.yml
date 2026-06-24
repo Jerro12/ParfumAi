@@ -30,6 +30,7 @@ intents:
   - tanya_parfum_manis_wanita
   - tanya_bahan_parfum
   - tanya_olfactory_family
+  - out_of_scope
 
 entities:
   - gender
@@ -82,6 +83,11 @@ responses:
 
   utter_iamabot:
     - text: "Saya adalah **AI Scent Sommelier**, asisten virtual berbasis kecerdasan buatan yang dikembangkan menggunakan Rasa Framework untuk skripsi rekomendasi parfum ParfumAi 🤖✨ Saya dapat membantu Anda menemukan parfum yang sempurna dari 33 koleksi eksklusif kami!"
+
+  utter_out_of_scope:
+    - text: "Maaf, chatbot ini hanya membahas tentang parfum saja. 🌸"
+    - text: "Maaf, chatbot ini hanya membahas tentang parfum saja. Saya siap membantu Anda menemukan wewangian yang tepat! ✨"
+    - text: "Maaf, chatbot ini hanya membahas tentang parfum saja. Coba tanyakan seputar aroma, rekomendasi parfum, atau tips wewangian! 🌹"
 
   utter_default:
     - text: "Maaf, saya kurang memahami maksud Anda 🙏 Bisa sebutkan apakah Anda mencari parfum untuk wanita/pria, atau jenis aroma tertentu seperti manis, kopi, segar, atau floral? Saya siap membantu!"

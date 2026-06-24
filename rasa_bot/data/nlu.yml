@@ -718,3 +718,62 @@ nlu:
       - keluarga aroma woody itu seperti apa
       - parfum aromatik fougere itu apa
       - pengelompokan jenis wewangian internasional
+
+  - intent: out_of_scope
+    examples: |
+      - beli sandal dong
+      - rekomen sandal yang bagus
+      - sandal jepit harganya berapa
+      - mau beli sepatu
+      - sepatu Nike terbaru apa
+      - kue ulang tahun yang enak
+      - resep kue brownies
+      - cara bikin kue bolu
+      - rekomendasi kue lebaran
+      - mau beli baju
+      - baju batik motif apa yang bagus
+      - rekomendasi kemeja pria
+      - dress wanita yang kekinian
+      - motor matic terbaru
+      - harga mobil baru
+      - oli mesin yang bagus
+      - ban motor ukuran berapa
+      - info berita hari ini
+      - siapa presiden indonesia
+      - cuaca hari ini bagaimana
+      - ramalan cuaca besok
+      - main game apa yang seru
+      - film terbaru apa yang bagus
+      - rekomendasi drama korea
+      - lagu terpopuler bulan ini
+      - cara masak nasi goreng
+      - resep rendang
+      - makanan sehat untuk diet
+      - minuman yang bikin langsing
+      - olahraga yang bagus untuk perut buncit
+      - tempat wisata di bali
+      - hotel murah di jakarta
+      - tiket pesawat murah
+      - cara daftar gojek
+      - nomor telepon ojek online
+      - cara top up gopay
+      - transfer uang lewat bank apa
+      - bunga deposito terbaik
+      - saham apa yang bagus
+      - cara belajar bahasa inggris
+      - kursus online gratis
+      - laptop gaming murah
+      - hp android terbaru
+      - harga iphone terbaru
+      - cara reset wifi
+      - obat sakit kepala yang ampuh
+      - cara turunkan demam anak
+      - vitamin untuk daya tahan tubuh
+      - anjing ras apa yang jinak
+      - cara merawat kucing
+      - pupuk tanaman hias
+      - cara menanam cabai
+      - bikin konten youtube gimana
+      - cara daftar instagram bisnis
+      - tips jualan online
+      - cara bikin toko shopee

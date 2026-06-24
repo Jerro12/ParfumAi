@@ -145,3 +145,8 @@ rules:
     steps:
       - intent: tanya_olfactory_family
       - action: utter_tanya_olfactory_family
+
+  - rule: Menolak pertanyaan di luar topik parfum
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
