@@ -21,12 +21,14 @@ def load_dataset_from_file() -> List[Dict[str, Any]]:
             import pandas as pd
             df = pd.read_excel(excel_path)
             for _, row in df.iterrows():
+                penjual_str = str(row.get('PENJUALAN', '')).upper()
                 dataset.append({
                     "name": str(row.get('JENIS PARFUM', '')),
                     "category": str(row.get('JENIS AROMA', '')),
                     "gender": str(row.get('JENIS KELAMIN', '')),
                     "longevity": str(row.get('KETAHANAN', '')),
-                    "bestseller": 'BEST SELLER' in str(row.get('PENJUALAN', '')).upper(),
+                    "bestseller": 'BEST SELLER' in penjual_str,
+                    "kuranglaris": 'KURANG LARIS' in penjual_str,
                     "price": str(row.get('HARGA', 'Rp 8.000 - Rp 50.000')),
                     "size": str(row.get('UKURAN', '10ml, 20ml, 35ml, 100ml')),
                 })
@@ -41,12 +43,14 @@ def load_dataset_from_file() -> List[Dict[str, Any]]:
             for row in reader:
                 price_val = row.get('HARGA', '') if row.get('HARGA') else 'Rp 8.000 - Rp 50.000'
                 size_val = row.get('UKURAN', '') if row.get('UKURAN') else '10ml, 20ml, 35ml, 100ml'
+                penjual_str = str(row.get('PENJUALAN', '')).upper()
                 dataset.append({
                     "name": row.get('JENIS PARFUM', ''),
                     "category": row.get('JENIS AROMA', ''),
                     "gender": row.get('JENIS KELAMIN', ''),
                     "longevity": row.get('KETAHANAN', ''),
-                    "bestseller": 'BEST SELLER' in str(row.get('PENJUALAN', '')).upper(),
+                    "bestseller": 'BEST SELLER' in penjual_str,
+                    "kuranglaris": 'KURANG LARIS' in penjual_str,
                     "price": price_val,
                     "size": size_val,
                 })
@@ -92,10 +96,19 @@ class ActionRekomendasiParfum(Action):
             'cewek cowok', 'cowok cewek'
         ]) or gender_slot in ['unisex']
 
-        # ---------- Deteksi PREFERENSI AROMA ----------
-        is_bestseller = any(kw in user_message for kw in [
+        # ---------- Deteksi PENJUALAN (BEST SELLER / KURANG LARIS) ----------
+        is_kuranglaris = any(kw in user_message for kw in [
+            'kurang laris', 'kurang diminati', 'kurang laku', 'sepi pembeli',
+            'tidak laris', 'gak laris', 'tidak populer', 'jarang dibeli',
+            'paling tidak laris', 'kurang terlaris', 'tidak terlalu laris',
+            'kurang favorit', 'penjualan rendah', 'sepi', 'kebalikannya',
+            'kebalikan', 'lawan terlaris', 'lawan best seller'
+        ])
+        is_bestseller = (not is_kuranglaris) and any(kw in user_message for kw in [
             'best seller', 'terlaris', 'favorit', 'laris', 'populer', 'hits', 'top', 'paling banyak'
         ])
+
+        # ---------- Deteksi PREFERENSI AROMA ----------
         is_coffee = any(kw in user_message for kw in [
             'kopi', 'opium', 'cappuccino', 'coffee', 'espresso', 'mocha', 'coklat', 'chocolate'
         ])
@@ -162,7 +175,9 @@ class ActionRekomendasiParfum(Action):
                 match = False
             if is_unisex and gender_lower != 'unisex':
                 match = False
-            if is_bestseller and not p['bestseller']:
+            if is_bestseller and not p.get('bestseller'):
+                match = False
+            if is_kuranglaris and not p.get('kuranglaris'):
                 match = False
 
             # Filter aroma berdasarkan kategori dan nama produk
@@ -214,27 +229,38 @@ class ActionRekomendasiParfum(Action):
                     match = False
                 if is_unisex and gender_lower != 'unisex':
                     match = False
-                if is_bestseller and not p['bestseller']:
+                if is_bestseller and not p.get('bestseller'):
+                    match = False
+                if is_kuranglaris and not p.get('kuranglaris'):
                     match = False
                 if match:
                     results_relaxed.append(p)
             results = results_relaxed
 
-        # Fallback ke best seller, lalu semua produk
+        # Fallback untuk kurang laris atau best seller
         if not results:
-            results = [p for p in perfumes if p.get('bestseller')]
+            if is_kuranglaris:
+                results = [p for p in perfumes if p.get('kuranglaris')]
+            elif is_bestseller:
+                results = [p for p in perfumes if p.get('bestseller')]
         if not results and perfumes:
             results = [p for p in perfumes if p.get('name')][:4]
 
         # ---------- Susun Header Balasan ----------
-        if is_unisex:
+        if is_kuranglaris and is_female:
+            header = "📉 **[Dataset] Rekomendasi Parfum Wanita yang Kurang Laris / Kurang Diminati:**\n\n"
+        elif is_kuranglaris and is_male:
+            header = "📉 **[Dataset] Rekomendasi Parfum Pria yang Kurang Laris / Kurang Diminati:**\n\n"
+        elif is_kuranglaris:
+            header = "📉 **[Dataset] Daftar Rekomendasi Parfum yang Kurang Laris / Kurang Diminati:**\n\n"
+        elif is_unisex:
             header = "🌈 **[Dataset] Koleksi Parfum Unisex (Cocok untuk Pria & Wanita):**\n\n"
         elif is_maskulin and is_male:
             header = "🦁 **[Dataset] Parfum Pria Maskulin & Berkarakter Kuat:**\n\n"
         elif is_glamor:
             header = "✨ **[Dataset] Koleksi Parfum Mewah & Glamor:**\n\n"
-        elif is_romantis and is_female:
-            header = "🥰 **[Dataset] Parfum Wanita untuk Momen Romantis:**\n\n"
+        elif is_romantis:
+            header = "🥰 **[Dataset] Rekomendasi Parfum untuk Momen Romantis & Kencan:**\n\n"
         elif is_manis_wanita:
             header = "🍰 **[Dataset] Koleksi Parfum Wanita Manis & Lembut:**\n\n"
         elif is_sporty:
@@ -262,20 +288,24 @@ class ActionRekomendasiParfum(Action):
         elif is_longlasting:
             header = "⏱️ **[Dataset] Parfum dengan Daya Tahan Terlama:**\n\n"
         else:
-            header = "🌟 **[Dataset] Rekomendasi Wewangian Parfumerie AI (33 Varian):**\n\n"
+            header = "🌟 **[Dataset] Rekomendasi Wewangian Parfumerie AI (36 Varian):**\n\n"
 
         # ---------- Susun Body Balasan ----------
-        # Urutkan: best seller duluan, lalu berdasarkan ketahanan terlama
         results_sorted = sorted(results, key=lambda p: (
-            -int(p['bestseller']),
+            -int(p.get('kuranglaris', False)) if is_kuranglaris else -int(p.get('bestseller', False)),
             -longevity_hours(p['longevity'])
         ))
 
         body = ""
         for idx, item in enumerate(results_sorted[:5], 1):
-            star = "⭐ Best Seller!" if item['bestseller'] else "✦ Regular"
+            if item.get('kuranglaris'):
+                status_badge = "📉 Kurang Laris"
+            elif item.get('bestseller'):
+                status_badge = "⭐ Best Seller!"
+            else:
+                status_badge = "✦ Regular"
             body += f"{idx}. **{item['name']}** ({item['gender']})\n"
-            body += f"   • Kategori Aroma: {item['category']} ({star})\n"
+            body += f"   • Kategori Aroma: {item['category']} ({status_badge})\n"
             body += f"   • Daya Tahan: {item['longevity']}\n"
             body += f"   • 💰 10ml=Rp 8.000 | 20ml=Rp 13.000 | 35ml=Rp 25.000 | 100ml=Rp 50.000\n\n"
 
@@ -284,3 +314,4 @@ class ActionRekomendasiParfum(Action):
         dispatcher.utter_message(text=header + body + footer)
 
         return []
+

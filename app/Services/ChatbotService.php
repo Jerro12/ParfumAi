@@ -23,7 +23,8 @@ class ChatbotService
         'baccarat', 'sauvage', 'black opium', 'scandalouis', 'dunhill', 'nagita',
         'selena gomez', 'vanilla cake', 'vanilla ice', 'cappuccino', 'polo sports',
         'bvlgari', 'zara wonder', 'white rose', 'aqua kiss', 'blue channel',
-        '212 men', 'baby love', 'avril rose', 'victoria secret',
+        '212 men', 'baby love', 'avril rose', 'victoria secret', 'candy love',
+        'incanto shine', 'chanel 05', 'christina night',
         // Istilah teknis parfum
         'notes', 'top notes', 'base notes', 'middle notes', 'heart notes',
         'longevity', 'ketahanan', 'sillage', 'proyeksi', 'piramida aroma',
@@ -31,7 +32,9 @@ class ChatbotService
         // Kata aksi terkait parfum
         'semprotkan', 'semprot', 'pakai parfum', 'beli parfum', 'cari parfum',
         'rekomendasi parfum', 'rekomen', 'rekomendasikan',
-        'tahan lama', 'awet', 'best seller', 'terlaris',
+        'tahan lama', 'awet', 'best seller', 'terlaris', 'kurang laris',
+        'kurang diminati', 'kurang laku', 'sepi pembeli', 'tidak laris',
+        'kebalikan', 'kebalikannya', 'tidak terlaris', 'tidak populer',
         // Salam & pertanyaan umum — tetap teruskan ke Rasa
         'halo', 'hai', 'hi', 'hello', 'hei', 'permisi', 'pagi', 'siang', 'malam',
         'bot', 'kamu siapa', 'chatbot', 'asisten', 'terima kasih', 'makasih',

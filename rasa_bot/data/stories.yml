@@ -32,6 +32,13 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
+  - story: Alur pencarian parfum kurang laris
+    steps:
+      - intent: tanya_kuranglaris
+      - action: action_rekomendasi_parfum
+      - intent: goodbye
+      - action: utter_goodbye
+
   - story: Alur edukasi seputar parfum
     steps:
       - intent: greet

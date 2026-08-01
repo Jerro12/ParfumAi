@@ -5,6 +5,7 @@ intents:
   - goodbye
   - cari_parfum
   - tanya_bestseller
+  - tanya_kuranglaris
   - tanya_ketahanan
   - tanya_kopi_vanilla
   - bot_challenge

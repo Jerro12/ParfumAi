@@ -1,0 +1,198 @@
+{
+  "total_questions": 20,
+  "passed": 20,
+  "accuracy_percent": 100.0,
+  "details": [
+    {
+      "id": 1,
+      "category": "Best Seller Umum",
+      "question": "rekomendasi parfum terlaris",
+      "status": "PASS",
+      "matched_keywords": [
+        "Best Seller"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Best Seller Wanita",
+      "question": "parfum best seller untuk wanita apa saja",
+      "status": "PASS",
+      "matched_keywords": [
+        "Perempuan",
+        "Best Seller"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Kurang Laris Umum",
+      "question": "rekomendasi parfum yang kurang laris",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kurang Laris",
+        "Aqua Kiss",
+        "Candy Love"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Kurang Laris Wanita",
+      "question": "parfum cewek yang kurang diminati apa aja",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kurang Laris",
+        "Aqua Kiss",
+        "Candy Love"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Kurang Laris / Sepi",
+      "question": "parfum mana yang sepi pembeli",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kurang Laris"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Kebalikan Terlaris",
+      "question": "apa kebalikannya parfum terlaris",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kurang Laris"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "Aroma Manis Wanita",
+      "question": "cari parfum cewek yang aromanya manis",
+      "status": "PASS",
+      "matched_keywords": [
+        "Perempuan",
+        "Manis"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "Pria Tahan Lama",
+      "question": "parfum cowok yang tahan lama",
+      "status": "PASS",
+      "matched_keywords": [
+        "Laki-laki"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "Aroma Kopi",
+      "question": "parfum yang wanginya seperti kopi",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kopi",
+        "Black Opium"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "Aroma Vanilla",
+      "question": "ada parfum aroma kue vanilla?",
+      "status": "PASS",
+      "matched_keywords": [
+        "Vanilla",
+        "Vanilla Cake"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "Aroma Floral",
+      "question": "rekomendasi parfum floral mawar",
+      "status": "PASS",
+      "matched_keywords": [
+        "Floral"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "Aroma Fresh",
+      "question": "parfum fresh segar untuk outdoor",
+      "status": "PASS",
+      "matched_keywords": [
+        "Fresh"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "Woody Maskulin",
+      "question": "parfum woody maskulin untuk pria",
+      "status": "PASS",
+      "matched_keywords": [
+        "Woody",
+        "Laki-laki"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "Romantis",
+      "question": "parfum untuk kencan romantis malam hari",
+      "status": "PASS",
+      "matched_keywords": [
+        "Romantis"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "Kantor / Formal",
+      "question": "parfum yang cocok untuk kerja di kantor",
+      "status": "PASS",
+      "matched_keywords": [
+        "Jam"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "Spesifik Produk",
+      "question": "baccarat dubai tahan berapa lama",
+      "status": "PASS",
+      "matched_keywords": [
+        "Baccarat Dubai"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "Variasi Kebalikan Best Seller",
+      "question": "apa kebalikan dari parfum terlaris di toko ini",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kurang Laris"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "Variasi Kurang Laku Wanita",
+      "question": "parfum perempuan yang paling kurang laku",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kurang Laris",
+        "Perempuan"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "Best Seller Pria",
+      "question": "parfum laki-laki yang best seller",
+      "status": "PASS",
+      "matched_keywords": [
+        "Laki-laki",
+        "Best Seller"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "Variasi Tidak Laris",
+      "question": "rekomendasi parfum tidak laris",
+      "status": "PASS",
+      "matched_keywords": [
+        "Kurang Laris"
+      ]
+    }
+  ]
+}

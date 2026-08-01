@@ -138,6 +138,34 @@ nlu:
       - pilihan terbaik dari parfumerie
       - parfum number one disini
 
+  - intent: tanya_kuranglaris
+    examples: |
+      - rekomendasi parfum yang kurang laris
+      - parfum yang kurang diminati apa saja
+      - parfum mana yang kurang laku
+      - rekomendasi parfum sepi pembeli
+      - parfum yang tidak laris apa
+      - kebalikannya parfum terlaris apa aja
+      - kebalikan dari parfum best seller
+      - lawan dari parfum terlaris
+      - parfum cewek yang kurang laris
+      - parfum wanita yang kurang diminati
+      - parfum pria yang kurang laris
+      - parfum cowok yang sepi pembeli
+      - produk parfum yang kurang laku apa saja
+      - kasih rekomendasi parfum kurang laris dong
+      - parfum apa yang jarang dibeli pelanggan
+      - mana parfum yang penjualan rendah
+      - parfum yang kurang populer disini
+      - parfum tidak terlalu laris apa
+      - daftar parfum kurang laris
+      - parfum kurang diminati untuk perempuan
+      - varian parfum yang kurang laris apa
+      - parfum mana yang tidak best seller
+      - rekomendasi wewangian yang sepi peminat
+      - parfum yang kurang terlaris
+      - apa kebalikan best seller parfum
+
   - intent: tanya_ketahanan
     examples: |
       - parfum yang tahan 12 jam

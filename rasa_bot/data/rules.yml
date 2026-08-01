@@ -26,6 +26,11 @@ rules:
       - intent: tanya_bestseller
       - action: action_rekomendasi_parfum
 
+  - rule: Menjalankan aksi rekomendasi parfum saat intent tanya_kuranglaris
+    steps:
+      - intent: tanya_kuranglaris
+      - action: action_rekomendasi_parfum
+
   - rule: Menjalankan aksi rekomendasi parfum saat intent tanya_ketahanan
     steps:
       - intent: tanya_ketahanan
