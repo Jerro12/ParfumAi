@@ -108,8 +108,7 @@ export default function ProdukDetail({ dbProduct, bottleSizes }) {
                     <div className="space-y-6 max-w-lg font-sans">
                         <div className="space-y-2 font-sans">
                             <div className="flex items-center gap-2 text-xs font-semibold text-gold uppercase tracking-widest font-sans">
-                                <Star size={16} className="fill-gold text-gold" />
-                                <span>{Number(product.rating || 5).toFixed(1)} / 5.0 ({product.reviews_count || 12} Ulasan Terverifikasi)</span>
+                                <span>✦ ({product.reviews_count || 12} Ulasan Terverifikasi)</span>
                             </div>
                             <h1 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
                                 {product.name}

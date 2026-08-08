@@ -3,7 +3,7 @@ import { SiteFooter } from '@/Components/SiteFooter';
 import { ChatbotWidget } from '@/Components/ChatbotWidget';
 import { Head, Link } from '@inertiajs/react';
 import { useState, useMemo } from 'react';
-import { Search, Sparkles, SlidersHorizontal, ArrowRight, Star } from 'lucide-react';
+import { Search, Sparkles, SlidersHorizontal, ArrowRight } from 'lucide-react';
 
 export default function Katalog({ dbProducts }) {
     const [searchQuery, setSearchQuery] = useState('');
@@ -32,8 +32,6 @@ export default function Katalog({ dbProducts }) {
             list.sort((a, b) => Number(a.price) - Number(b.price));
         } else if (sortBy === 'Harga Tinggi ke Rendah') {
             list.sort((a, b) => Number(b.price) - Number(a.price));
-        } else if (sortBy === 'Rating Teratas') {
-            list.sort((a, b) => Number(b.rating || 5) - Number(a.rating || 5));
         }
 
         return list;
@@ -107,7 +105,6 @@ export default function Katalog({ dbProducts }) {
                             className="bg-input text-foreground border border-border rounded-full px-4 py-2.5 text-xs font-semibold uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm"
                         >
                             <option value="Rekomendasi AI">✧ Rekomendasi AI</option>
-                            <option value="Rating Teratas">★ Rating Teratas</option>
                             <option value="Harga Rendah ke Tinggi">Harga: Rendah ke Tinggi</option>
                             <option value="Harga Tinggi ke Rendah">Harga: Tinggi ke Rendah</option>
                         </select>
@@ -154,7 +151,7 @@ export default function Katalog({ dbProducts }) {
                             <div key={p.id} className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 flex flex-col group relative">
                                 
                                 <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-background/85 backdrop-blur-md text-foreground rounded-full text-[10px] font-bold uppercase tracking-wider border border-border shadow-sm flex items-center gap-1.5">
-                                    {p.is_bestseller ? <><Star size={10} className="fill-gold text-gold" /> Best Seller</> : p.category}
+                                    {p.category}
                                 </div>
 
                                 <div className="relative h-72 overflow-hidden bg-secondary/50 flex items-center justify-center">
@@ -163,9 +160,6 @@ export default function Katalog({ dbProducts }) {
                                         alt={p.name}
                                         className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                                     />
-                                    <div className="absolute top-4 right-4 z-10 bg-background/85 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-gold border border-border shadow-sm flex items-center gap-1">
-                                        <Star size={12} className="fill-gold" /> {Number(p.rating || 5).toFixed(1)}
-                                    </div>
                                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                         <Link
                                             href={route('katalog.detail', { id: p.id })}

@@ -1,7 +1,7 @@
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, router, useForm } from '@inertiajs/react';
 import { useState } from 'react';
-import { Plus, Search, Edit2, Trash2, X, Sparkles, AlertCircle, Star } from 'lucide-react';
+import { Plus, Search, Edit2, Trash2, X, Sparkles, AlertCircle } from 'lucide-react';
 
 export default function ProductsIndex({ products }) {
     const [searchQuery, setSearchQuery] = useState('');
@@ -141,7 +141,6 @@ export default function ProductsIndex({ products }) {
                                 <th className="py-4 px-4">Kategori Aroma</th>
                                 <th className="py-4 px-4">Target Gender</th>
                                 <th className="py-4 px-4">Daya Tahan</th>
-                                <th className="py-4 px-4">Status Penjualan</th>
                                 <th className="py-4 px-4">Harga Dasar</th>
                                 <th className="py-4 px-6 text-right">Tindakan</th>
                             </tr>
@@ -149,7 +148,7 @@ export default function ProductsIndex({ products }) {
                         <tbody className="divide-y divide-border/60">
                             {filteredProducts.length === 0 ? (
                                 <tr>
-                                    <td colSpan="7" className="py-12 text-center text-xs text-muted-foreground italic">
+                                    <td colSpan="6" className="py-12 text-center text-xs text-muted-foreground italic">
                                         Tidak ada produk yang cocok dengan pencarian Anda.
                                     </td>
                                 </tr>
@@ -164,11 +163,6 @@ export default function ProductsIndex({ products }) {
                                                         alt={p.name}
                                                         className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                                                     />
-                                                    {p.is_bestseller && (
-                                                        <div className="absolute top-1 right-1 bg-gold text-background p-1 rounded-full shadow" title="Best Seller">
-                                                            <Star size={12} fill="currentColor" />
-                                                        </div>
-                                                    )}
                                                 </div>
                                                 <div className="space-y-1 min-w-0 flex-1">
                                                     <div className="font-serif font-bold text-foreground text-base group-hover:text-primary transition truncate">
@@ -198,17 +192,6 @@ export default function ProductsIndex({ products }) {
                                         </td>
                                         <td className="py-4 px-4 text-xs font-semibold text-muted-foreground whitespace-nowrap">
                                             ⏳ {p.longevity || '4-6 Jam'}
-                                        </td>
-                                        <td className="py-4 px-4">
-                                            {p.is_bestseller ? (
-                                                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gold/10 text-gold border border-gold/30 rounded-full text-[10px] font-bold tracking-wider uppercase whitespace-nowrap">
-                                                    <Star size={12} fill="currentColor" /> Best Seller
-                                                </span>
-                                            ) : (
-                                                <span className="px-3 py-1 bg-secondary text-muted-foreground border border-border rounded-full text-[10px] font-medium tracking-wider uppercase whitespace-nowrap">
-                                                    ✦ Regular
-                                                </span>
-                                            )}
                                         </td>
                                         <td className="py-4 px-4 font-serif font-extrabold text-foreground text-base whitespace-nowrap">
                                             Rp {Number(p.price).toLocaleString('id-ID')}
@@ -366,19 +349,6 @@ export default function ProductsIndex({ products }) {
                                             </div>
                                         </div>
                                     )}
-                                </div>
-
-                                <div className="sm:col-span-2 flex items-center gap-3 p-4 bg-secondary/40 border border-border rounded-2xl">
-                                    <input
-                                        type="checkbox"
-                                        id="is_bestseller"
-                                        checked={data.is_bestseller}
-                                        onChange={(e) => setData('is_bestseller', e.target.checked)}
-                                        className="size-5 rounded border-border text-gold focus:ring-gold/50 bg-input"
-                                    />
-                                    <label htmlFor="is_bestseller" className="text-sm font-bold text-gold flex items-center gap-1.5 cursor-pointer">
-                                        <Star size={16} fill="currentColor" /> Tandai Parfum Ini Sebagai "Best Seller" di Toko & Chatbot AI
-                                    </label>
                                 </div>
 
                                 <div className="sm:col-span-2">
